@@ -15,6 +15,11 @@ Table Of Contents
     - [Pseudo-class Selectors](#pseudo-class-selectors)
     - [Pseudo-element Selectors](#pseudo-element-selectors)
     - [Selectors Specificity](#selectors-specificity)
+  - [Sass](#sass)
+    - [Variables](#variables)
+    - [Nesting](#nesting)
+    - [Mixins](#mixins)
+    - [Links](#links)
 
 ## Box Model
 
@@ -169,3 +174,59 @@ In VSCode, we can see the specificity of a rule by hovering our mouse over it. T
 specificity is represented using three numbers (x, y, z) where x represents the number of
 ID selectors, y represents the number of class/attribute selectors and z represents the
 number of element selectors.
+
+## Sass
+
+Sass is a CSS preprocessor that allows us to write CSS more efficiently. It provides
+features that are not available in CSS like variables, nesting, mixins, functions, and
+inheritance.
+
+Sass files have the extension .scss. To compile Sass files to CSS, we can use the
+command line or a task runner like Gulp or Webpack.
+
+**differences between Sass and SCSS:**
+
+- `Sass` uses an indentation-based syntax without curly braces or semicolons. It’s more concise and resembles Python.
+- `SCSS` (Sassy CSS) uses a syntax similar to CSS, with curly braces and semicolons, making it easier for developers familiar with CSS to adopt.
+
+### Variables
+
+```scss
+$defaultLinkColor: #46EAC2
+a 
+  color: $defaultLinkColor
+```
+
+interpolation
+
+```scss
+$wk: -webkit-
+.rounded-box
+  #{$wk}border-radius: 4px
+```
+
+### Nesting
+
+```scss
+.markdown-body 
+    a 
+      color: blue
+      &:hover 
+        color: red
+```
+
+### Mixins
+
+```scss
+@mixin pad($n: 10px)
+    padding: $n;
+
+body
+    @include pad(15px)
+```
+
+### Links
+
+- [Documentation](https://sass-lang.com/documentation/)
+- [Quickref](https://quickref.me/sass)
+- [W3Schools](https://www.w3schools.com/sass/sass_intro.php)
