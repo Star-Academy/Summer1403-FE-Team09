@@ -12,10 +12,10 @@
 
 @mixin flex($direction: row, $justify: center, $align: stretch, $wrap: no-wrap)
     display: flex
-    flex-direction: $direction
-    justify-content: $justify
-    align-items: $align
-    flex-wrap: $wrap
+    flex-direction: #{$direction}
+    justify-content: #{$justify}
+    align-items: #{$align}
+    flex-wrap: #{$wrap}
 
 body
     @include flex()
