@@ -50,18 +50,18 @@ footer {
   flex-wrap: wrap;
 }
 #container .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: no-wrap;
+  width: 22%;
+  box-sizing: border-box;
   margin: 10px;
   padding: 20px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   background-color: #fff;
-  width: 22%;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: no-wrap;
 }
 #container .card h3 {
   margin-top: 10px;
