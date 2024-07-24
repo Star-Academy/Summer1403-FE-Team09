@@ -10,8 +10,15 @@
     border-radius: 5px
     background-color: #{$bg_color}
 
-body
+@mixin flex($direction: row, $justify: center, $align: stretch, $wrap: no-wrap)
     display: flex
+    flex-direction: $direction
+    justify-content: $justify
+    align-items: $align
+    flex-wrap: $wrap
+
+body
+    @include flex()
 
 aside
     @include boxSizing(20%)
@@ -28,17 +35,12 @@ footer
     @include sectionStyle(#f2f2f2)
 
 #container
-    display: flex
-    align-items: stretch
-    justify-content: space-between
-    flex-wrap: wrap
+    @include flex($align: stretch, $justify: space-between, $wrap: wrap)
 
     .card
+        @include flex(column, center)
         @include sectionStyle()
         @include boxSizing(22%)
-        display: flex
-        flex-direction: column
-        align-items: center
 
         h3
             margin-top: 10px
