@@ -1,7 +1,8 @@
-<h1 style="margin-top: 30px; text-align: center;">UI/UX</h1
+<h1 style="margin-top: 30px; text-align: center;">UI/UX</h1>
+
 > **UI**: *User Interface*; Interaction that the user will have with the webpage.
 
-> **UX**: _User Experience_; The user's experience with the webpage (The quality of the webpage).
+> **UX**: *User Experience*; The user's experience with the webpage (The quality of the webpage).
 
 **UI** -> Visuals
 
@@ -39,7 +40,7 @@ User Interface is actually the part of "how should user intract with the logic a
 
 2. <h3 style="color: lightgreen; opacity: 0.8; font-size: 16px">Colors:</h3> The color psychology of the product must be maintained, and is so important based on reasearch, you must know which colors wuit what and what other colors.
 
-   #### Some good tools for colors:
+#### Some good tools for colors
 
    - [Adobe Color](https://color.adobe.com/create/color-wheel)
    - [Coolors](https://coolors.co/)
@@ -50,7 +51,7 @@ User Interface is actually the part of "how should user intract with the logic a
 
    ***
 
-   #### Useful tools to adjust the contrast's level:
+#### Useful tools to adjust the contrast's level
 
    - [Colour Contrast Checker](https://colourcontrast.cc/)
    - [Adobe Contrast Checker](https://color.adobe.com/create/color-contrast-analyzer)
@@ -73,7 +74,7 @@ User Interface is actually the part of "how should user intract with the logic a
 
    ***
 
-   #### The elements of typography include:
+#### The elements of typography include
 
    - Typeface and font
    - Mean line
@@ -85,7 +86,7 @@ User Interface is actually the part of "how should user intract with the logic a
    - Leading
    - Negative space
 
-   #### These can be used as utilities:
+#### These can be used as utilities
 
    - [FontPair](https://fontpair.co/) for finding the matching fonts.
    - [TypeWolf](https://www.typewolf.com/) for finding the best matching fonts.
