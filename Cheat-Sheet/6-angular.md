@@ -171,4 +171,15 @@ Angular creates an application-wide injector (also known as the "root" injector)
 
 In most cases you don't need to manually create injectors, but you should know that there is a layer that connects providers and consumers.
 
+```ts
+@Injectable({
+  providedIn: 'root'
+})
+class HeroService {}
+```
+
+```ts
+constructor(heroService: HeroService)
+```
+
 [docs](https://angular.dev/guide/di/dependency-injection)
