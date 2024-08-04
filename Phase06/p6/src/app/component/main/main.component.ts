@@ -18,6 +18,7 @@ export class MainComponent {
       this.books = books;
     });
   }
+  
   DeleteBook(book: Book) {
     console.log(this.books);
     this.books = this.books.filter(b => b !== book);

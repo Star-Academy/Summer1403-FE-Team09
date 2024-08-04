@@ -12,8 +12,8 @@
         }
     </p>
     <div>
-        <span>{{ book.price }}</span>
-        <span>{{ book.publishData }}</span>
+        <span>{{ book.price | currency }}</span>
+        <span>{{ book.publishData | date }}</span>
     </div>
     <div>
         <button>Edit</button>

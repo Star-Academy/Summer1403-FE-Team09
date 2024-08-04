@@ -1,15 +1,39 @@
-app-aside {
-  width: 20%;
-}
-
 #cont {
-  width: 80%;
   display: flex;
   flex-direction: row;
-  gap: 1rem;
-}
+  height: calc(100vh - 120px);
 
-app-main {
-  flex-grow: 1;
-  // height:300px;
+  app-aside {
+    width: 20%;
+  }
+
+  app-main {
+    width: 80%;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow-y: auto;
+    z-index: 20;
+    scrollbar-width: thin;
+    scrollbar-color: #666666 #F0F0F0;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #F0F0F0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #666666;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #999999;
+    }
+  }
 }
