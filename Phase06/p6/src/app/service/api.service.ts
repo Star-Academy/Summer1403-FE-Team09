@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import Book from '../interface/book';
-import { Observable, ReplaySubject } from 'rxjs';
+import { map, Observable, ReplaySubject, take, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { API_URL } from '../app.config';
 
@@ -26,5 +26,8 @@ export class ApiService {
 
   addBook(book: Book) {
     this.obs.next(book);
+  }
+
+  editBook(book:Book) {
   }
 }
