@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import Book from '../interface/book';
-import { Observable } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { API_URL } from '../app.config';
 
@@ -9,9 +9,22 @@ import { API_URL } from '../app.config';
   providedIn: 'root'
 })
 export class ApiService {
-  constructor(public http: HttpClient) {}
 
-  getBooks(): Observable<Book[]> {
-    return this.http.get<Book[]>(API_URL);
+  public obs: ReplaySubject<Book>;
+  constructor(public http: HttpClient) {
+    this.obs = new ReplaySubject<Book>();
+    this.http.get<Book[]>(API_URL).subscribe((books: Book[]) => {
+      books.forEach(book => {
+        this.obs.next(book);
+      });
+    });
+  }
+
+  getBooks(): Observable<Book> {
+    return this.obs.asObservable();
+  }
+
+  addBook(book: Book) {
+    this.obs.next(book);
   }
 }
