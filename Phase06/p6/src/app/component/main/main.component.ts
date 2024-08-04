@@ -14,8 +14,10 @@ export class MainComponent {
   protected books!: Book[];
 
   constructor(protected api: ApiService) {
-    api.getBooks().subscribe(books => {
-      this.books = books;
+    this.books = [];
+    api.getBooks().subscribe(book => {
+      this.books.push(book);
+      console.log(book);
     });
   }
   
