@@ -1,0 +1,14 @@
+app-aside {
+  width: 20%;
+}
+
+#cont {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+app-main {
+  flex-grow: 1;
+  // height:300px;
+}
