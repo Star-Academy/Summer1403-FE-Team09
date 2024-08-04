@@ -1,0 +1,22 @@
+<section>
+    <h2>{{ book.name }}</h2>
+    <h4>{{ book.author }}</h4>
+    <img src="{{ book.image }}" alt="{{ book.name }}"/>
+    <p>
+        @for (genre of book.genre; track genre) {
+            @if (!$last) {
+                {{ genre }},
+            } @else {
+                {{ genre }}
+            }
+        }
+    </p>
+    <div>
+        <span>{{ book.price }}</span>
+        <span>{{ book.publishData }}</span>
+    </div>
+    <div>
+        <button>Edit</button>
+        <button (click)="deleteBook()">Delete</button>
+    </div>
+</section>
