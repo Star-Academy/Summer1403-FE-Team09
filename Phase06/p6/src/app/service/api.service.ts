@@ -31,4 +31,3 @@ export class ApiService {
   editBook(book:Book) {
   }
 }
-1
