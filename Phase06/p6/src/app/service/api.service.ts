@@ -29,8 +29,19 @@ export class ApiService {
       this.obs.next(this.Books);
     });
   }
-  editBook(book: Book) {
 
+  editBook(book: Book) {
+    this.http.put(API_URL, book).subscribe((res: any) => {
+
+      this.Books = this.Books.map((b) => {
+        if (b.id === book.id) {
+          return book;
+        }
+        return b;
+      });
+
+      this.obs.next(this.Books);
+    });
   }
 
   deleteBook(book: Book) {
