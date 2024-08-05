@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import Book from '../interface/book';
 import { map, Observable, ReplaySubject, take, tap } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { API_URL } from '../app.config';
 
 
@@ -25,9 +25,16 @@ export class ApiService {
   }
 
   addBook(book: Book) {
+    let flag = false;
+
     this.http.post<Book>(API_URL, book).subscribe((book: Book) => {
       this.obs.next(book);
-    });
+      alert('Book added successfully');
+      flag = true;
+    },
+      (err: HttpErrorResponse) => { alert(err.message); });
+
+    return flag;
   }
 
   editBook(book: Book) {
