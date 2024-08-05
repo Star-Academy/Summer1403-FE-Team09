@@ -16,7 +16,7 @@
         <span>{{ book.publishData | date }}</span>
     </div>
     <div>
-        <button>Edit</button>
+        <button routerLink="/edit/{{ book.id }}">Edit</button>
         <button (click)="deleteBook()">Delete</button>
     </div>
 </section>

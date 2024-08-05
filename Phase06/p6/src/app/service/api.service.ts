@@ -26,6 +26,10 @@ export class ApiService {
     });
   }
 
+  getBookById(id: string) {
+    return this.books.find((b) => b.id === id);
+  }
+
   addBook(book: Book) {
     this.http.post(API_URL, book).subscribe(() => {
       this.books.push(book);
