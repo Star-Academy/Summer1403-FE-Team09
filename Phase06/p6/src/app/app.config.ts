@@ -8,4 +8,4 @@ export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideHttpClient()]
 };
 
-export const API_URL = "http://localhost:3000/books";
+export const API_URL = "https://bookstore.abriment.com/books?page=1";
