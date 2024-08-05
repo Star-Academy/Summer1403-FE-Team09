@@ -4,13 +4,19 @@ import { Observable, ReplaySubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { API_URL } from '../app.config';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+  protected obs = new ReplaySubject<Book[]>();
+  protected Books!: Book[];
+
   constructor(public http: HttpClient) {
     
+  }
+
+  subscribeBooks() {
+    return this.obs.asObservable();
   }
 
   getBooks() {
