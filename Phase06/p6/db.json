@@ -311,6 +311,17 @@
       "publishData": "2007-03-27",
       "price": 1499,
       "id": "b407"
+    },
+    {
+      "id": "ca5e",
+      "name": "atal",
+      "image": "eqweqwe",
+      "genre": [
+        "qweqw"
+      ],
+      "author": "qweqeqwe",
+      "publishData": "2024-08-01",
+      "price": 32131
     }
   ]
 }

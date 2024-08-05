@@ -17,7 +17,11 @@ export class EditFormComponent {
   protected book!: Book;
 
   constructor(public api: ApiService, public route: ActivatedRoute, private location: Location) {
-    this.book = this.api.getBookById(route.snapshot.params['id']) as Book;
+    this.book = this.api.getBookById(this.route.snapshot.params['id']) as Book;
+
+    if (!this.book) {
+      return;
+    }
 
     this.formGroup = new FormGroup({
       name: new FormControl(this.book.name),
@@ -42,6 +46,7 @@ export class EditFormComponent {
         price: this.formGroup.value.price ?? this.book.price,
       };
       this.api.editBook(new_book);
+      this.location.back();
       console.log("Form Submitted!");
     }
   }
