@@ -32,7 +32,7 @@ export class EditFormComponent {
       author: new FormControl(this.book.author, Validators.required),
       publishData: new FormControl(this.book.publishData, Validators.required),
       price: new FormControl(this.book.price, [Validators.required,
-      Validators.pattern('^[0-9]*$'),
+      Validators.pattern('^[0-9]+(\.[0-9]{1,2})?$'),
       ]),
     });
   }
@@ -40,20 +40,20 @@ export class EditFormComponent {
   onSubmit() {
     if (this.formGroup.valid) {
       const new_book: Book = {
+        id: this.book.id,
         name: this.formGroup.value.name || this.book.name,
         image: this.formGroup.value.image || this.book.image,
         genre: this.formGroup.value.genre?.split(',') || this.book.genre,
         author: this.formGroup.value.author || this.book.author,
         publishData: this.formGroup.value.publishData || this.book.publishData,
         price: this.formGroup.value.price ?? this.book.price,
-        id: this.book.id,
       };
 
       this.api.editBook(new_book);
       this.location.back();
-      console.log("Form Submitted!");
     }
   }
+
 
   close() {
     this.location.back();

@@ -22,7 +22,7 @@ export class AsideComponent {
     publishData: new FormControl('', Validators.required),
     price: new FormControl('', [
       Validators.required,
-      Validators.pattern('^[0-9]*$'),
+      Validators.pattern('^[0-9]+(\.[0-9]{1,2})?$'),
     ]),
   });
 

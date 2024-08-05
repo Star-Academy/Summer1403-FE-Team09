@@ -1,34 +1,31 @@
-  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-    <div>
-      <span (click)="close()">&times;</span>
-    </div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" formControlName="name" />
-  
-      <label for="image-url">Image URL:</label>
-      <input
-        type="text"
-        id="image-url"
-        name="image-url"
-        formControlName="image"
-      />
-  
-      <label for="genre">Genre:</label>
-      <input type="text" id="genre" name="genre" formControlName="genre" />
-  
-      <label for="author">Author:</label>
-      <input type="text" id="author" name="author" formControlName="author" />
-  
-      <label for="publishData">publish Data:</label>
-      <input
-        type="date"
-        id="publishData"
-        name="publishData"
-        formControlName="publishData"
-      />
-  
-      <label for="price">Price:</label>
-      <input type="number" id="price" name="price" formControlName="price" />
-  
-      <button type="submit" [disabled]="!formGroup.valid">Edit Book</button>
-  </form>
+<div id="Edit-Crad">
+
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" formControlName="name" />
+
+  <label for="image-url">Image URL:</label>
+  <input type="text" id="image-url" name="image-url" formControlName="image" />
+
+  <label for="genre">Genre:</label>
+  <input type="text" id="genre" name="genre" formControlName="genre" />
+
+  <label for="author">Author:</label>
+  <input type="text" id="author" name="author" formControlName="author" />
+
+  <label for="publishData">publish Data:</label>
+  <input
+    type="date"
+    id="publishData"
+    name="publishData"
+    formControlName="publishData"
+  />
+
+  <label for="price">Price:</label>
+  <input type="number" id="price" name="price" formControlName="price" />
+
+  <button type="submit" [disabled]="!formGroup.valid">Edit Book</button>
+</form>
+<button id="close" (click)="close()">Close</button>
+
+</div>
