@@ -1,18 +1,6 @@
 {
   "books": [
     {
-      "name": "To Kill a Mockingbird",
-      "image": "https://picsum.photos/200/300",
-      "genre": [
-        "Fiction",
-        "Classic"
-      ],
-      "author": "Harper Lee",
-      "publishData": "1960-07-11",
-      "price": 799,
-      "id": "36a7"
-    },
-    {
       "name": "The Great Gatsby",
       "image": "https://picsum.photos/200/300",
       "genre": [

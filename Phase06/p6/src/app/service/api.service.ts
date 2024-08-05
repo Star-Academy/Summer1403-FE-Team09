@@ -27,14 +27,14 @@ export class ApiService {
   }
 
   addBook(book: Book) {
-    this.http.post(API_URL, book).subscribe((res: any) => {
+    this.http.post(API_URL, book).subscribe(() => {
       this.books.push(book);
       this.obs.next(this.books);
     });
   }
 
   editBook(book: Book) {
-    this.http.put(API_URL, book).subscribe((res: any) => {
+    this.http.put(`${API_URL}/${book.id}`, book).subscribe(() => {
 
       this.books = this.books.map((b) => {
         if (b.id === book.id) {
