@@ -20,8 +20,11 @@ export class ApiService {
   }
 
   getBooks() {
-    this.http.get<Book[]>(API_URL).subscribe((data) => {
-      this.books = data;
+    type response = {
+      "books": Book[] 
+    }
+    this.http.get<response>(API_URL).subscribe((data) => {
+      this.books = data.books;
       this.obs.next(this.books);
     });
   }
