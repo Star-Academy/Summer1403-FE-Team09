@@ -1,52 +1,29 @@
 {
   "books": [
     {
-      "name": "The Great Gatsby",
-      "image": "https://picsum.photos/200/300",
-      "genre": [
-        "Fiction",
-        "Classic"
-      ],
-      "author": "F. Scott Fitzgerald",
-      "publishData": "1925-04-10",
-      "price": 699,
-      "id": "eb7c"
-    },
-    {
-      "name": "Harry Potter and the Philosopher's Stone",
-      "image": "https://picsum.photos/200/300",
-      "genre": [
-        "Fantasy",
-        "Young Adult"
-      ],
-      "author": "J.K. Rowling",
-      "publishData": "1997-06-26",
-      "price": 1099,
-      "id": "593a"
-    },
-    {
+      "id": "6fbc",
       "name": "The Catcher in the Rye",
       "image": "https://picsum.photos/200/300",
       "genre": [
         "Fiction",
-        "Coming-of-age"
+        "  Coming-of-age",
+        " qwwww"
       ],
       "author": "J.D. Salinger",
       "publishData": "1951-07-16",
-      "price": 849,
-      "id": "6fbc"
+      "price": 849.89
     },
     {
+      "id": "39c3",
       "name": "Pride and Prejudice",
       "image": "https://picsum.photos/200/300",
       "genre": [
         "Romance",
-        "Classic"
+        " Classic"
       ],
       "author": "Jane Austen",
       "publishData": "1813-01-28",
-      "price": 599,
-      "id": "39c3"
+      "price": 599
     },
     {
       "name": "The Hobbit",
@@ -229,16 +206,16 @@
       "id": "ac0a"
     },
     {
+      "id": "6368",
       "name": "One Hundred Years of Solitude",
       "image": "https://picsum.photos/200/300",
       "genre": [
         "Magical Realism",
-        "Literary Fiction"
+        " Literary Fiction"
       ],
       "author": "Gabriel García Márquez",
       "publishData": "1967-05-30",
-      "price": 1099,
-      "id": "6368"
+      "price": 1099
     },
     {
       "name": "The Silent Patient",

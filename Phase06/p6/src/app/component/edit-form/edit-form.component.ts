@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import Book from '../../interface/book';
 import { ApiService } from '../../service/api.service';
@@ -53,8 +53,8 @@ export class EditFormComponent {
       this.location.back();
     }
   }
-
-
+  
+  @HostListener('document:keydown.escape', ['$event'])
   close() {
     this.location.back();
   }
