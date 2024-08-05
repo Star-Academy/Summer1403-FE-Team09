@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import Book from '../interface/book';
-import { map, Observable, ReplaySubject, take, tap } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { API_URL } from '../app.config';
 
@@ -29,5 +29,20 @@ export class ApiService {
   }
 
   editBook(book:Book) {
+    this.obs.forEach(b => {
+      if (b.name === book.name) {
+        b = book;
+      }
+    });
+    this.http.put(API_URL + "/" + book.name, book).subscribe();
+  }
+
+  deleteBook(book: Book) {
+    this.obs.forEach(b => {
+      if (b !== book) {
+        this.obs.next(b);
+      }
+    })
+    this.http.delete(API_URL + "/" + book.name).subscribe();
   }
 }
