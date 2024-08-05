@@ -1,0 +1,16 @@
+<section>
+    <h2>{{ book.book_title }}</h2>
+    <h4>{{ book.book_author }}</h4>
+    <img src="{{ book.image_url_l }}" alt="{{ book.book_title }}"/>
+    <p>
+        {{ book.publisher }}
+    </p>
+    <div>
+        <span>{{ book.isbn | isbn }}</span>
+        <span>{{ book.year_of_publication| date }}</span>
+    </div>
+    <div>
+        <button routerLink="/edit/{{ book.id }}">Edit</button>
+        <button (click)="deleteBook()">Delete</button>
+    </div>
+</section>
