@@ -22,7 +22,7 @@ export class MainComponent {
   }
   
   DeleteBook(book: Book) {
-    console.log(this.books);
     this.books = this.books.filter(b => b !== book);
+    this.api.deleteBook(book);
   }
 }
