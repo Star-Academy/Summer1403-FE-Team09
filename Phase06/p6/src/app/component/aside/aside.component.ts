@@ -38,15 +38,11 @@ export class AsideComponent {
       };
 
       this.api.addBook(new_book);
-      this.bookForm.value.name = '';
-      this.bookForm.value.image = '';
-      this.bookForm.value.genre = '';
-      this.bookForm.value.author = '';
-      this.bookForm.value.publishData = '';
-      this.bookForm.value.price = '';
-      console.log('Form Submitted!');
-    } else {
-      alert('Please fill all the fields!');
+      console.log("Form Submitted!");
+
+    }
+    else {
+      alert("Please fill all the fields!");
     }
   }
 }

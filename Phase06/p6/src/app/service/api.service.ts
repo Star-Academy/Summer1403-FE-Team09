@@ -27,11 +27,24 @@ export class ApiService {
   }
 
   addBook(book: Book) {
-    
+    this.http.post(API_URL, book).subscribe((res: any) => {
+      this.books.push(book);
+      this.obs.next(this.books);
+    });
   }
 
-  editBook(book:Book) {
-    
+  editBook(book: Book) {
+    this.http.put(API_URL, book).subscribe((res: any) => {
+
+      this.books = this.books.map((b) => {
+        if (b.id === book.id) {
+          return book;
+        }
+        return b;
+      });
+
+      this.obs.next(this.books);
+    });
   }
 
   deleteBook(book: Book) {
