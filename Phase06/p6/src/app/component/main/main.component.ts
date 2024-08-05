@@ -14,15 +14,8 @@ export class MainComponent {
   protected books!: Book[];
 
   constructor(protected api: ApiService) {
-    this.books = [];
-    api.getBooks().subscribe(book => {
-      this.books.push(book);
-      console.log(book);
-    });
   }
   
   DeleteBook(book: Book) {
-    this.books = this.books.filter(b => b !== book);
-    this.api.deleteBook(book);
   }
 }

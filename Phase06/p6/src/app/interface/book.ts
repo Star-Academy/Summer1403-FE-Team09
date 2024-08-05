@@ -1,6 +1,6 @@
 
 export default interface Book {
-    id: string,
+    id?: string,
     name: string,
     image: string,
     genre: string[],
