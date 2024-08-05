@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "api": "npx json-server db.json"
+    "api": "npx json-server db.json --id name"
   },
   "private": true,
   "dependencies": {
