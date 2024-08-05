@@ -25,24 +25,11 @@ export class ApiService {
   }
 
   addBook(book: Book) {
-    this.obs.next(book);
+    this.http.post<Book>(API_URL, book).subscribe((book: Book) => {
+      this.obs.next(book);
+    });
   }
 
   editBook(book:Book) {
-    this.obs.forEach(b => {
-      if (b.name === book.name) {
-        b = book;
-      }
-    });
-    this.http.put(API_URL + "/" + book.name, book).subscribe();
-  }
-
-  deleteBook(book: Book) {
-    this.obs.forEach(b => {
-      if (b !== book) {
-        this.obs.next(b);
-      }
-    })
-    this.http.delete(API_URL + "/" + book.name).subscribe();
   }
 }
