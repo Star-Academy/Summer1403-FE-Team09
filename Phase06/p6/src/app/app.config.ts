@@ -8,4 +8,4 @@ export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideHttpClient()]
 };
 
-export const API_URL = "https://raw.githubusercontent.com/Star-Academy/codestar-documents/master/static/datasets/books.json";
+export const API_URL = "http://localhost:3000/books";

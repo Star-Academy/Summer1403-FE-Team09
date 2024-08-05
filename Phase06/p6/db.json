@@ -1,0 +1,12 @@
+{
+    "books": [
+        {
+            "name": "Raze movafaghiat",
+            "author": "Team09",
+            "image": "https://cdn.shopify.com/s/files/1/0057/3728/3618/products/raze-movafaghiat-1_1024x1024.png?v=1658332207",
+            "genre": ["Action"],
+            "publishDate": "2022-01-01",
+            "price": 20
+        }
+    ]
+}
