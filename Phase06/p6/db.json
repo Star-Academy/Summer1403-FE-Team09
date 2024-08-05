@@ -2,12 +2,12 @@
   "books": [
     {
       "id": "6fbc",
-      "name": "The Catcher in the Rye",
+      "name": "The Catcher in the Ryeeeeee",
       "image": "https://picsum.photos/200/300",
       "genre": [
         "Fiction",
-        "  Coming-of-age",
-        " qwwww"
+        "   Coming-of-age",
+        "  qwwww"
       ],
       "author": "J.D. Salinger",
       "publishData": "1951-07-16",
@@ -299,6 +299,17 @@
       "author": "qweqeqwe",
       "publishData": "2024-08-01",
       "price": 32131
+    },
+    {
+      "id": "d626",
+      "name": "Mobile",
+      "image": "awdawd",
+      "genre": [
+        "awdawd"
+      ],
+      "author": "awdawda",
+      "publishData": "2024-08-15",
+      "price": 123213
     }
   ]
 }
