@@ -12,9 +12,7 @@ import Book from '../../interface/book';
   styleUrl: './aside.component.scss',
 })
 export class AsideComponent {
-
-  constructor(public api: ApiService) {
-  }
+  constructor(public api: ApiService) {}
 
   bookForm = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -22,34 +20,33 @@ export class AsideComponent {
     genre: new FormControl('', Validators.required),
     author: new FormControl('', Validators.required),
     publishData: new FormControl('', Validators.required),
-    price: new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$")]),
+    price: new FormControl('', [
+      Validators.required,
+      Validators.pattern('^[0-9]*$'),
+    ]),
   });
 
   onSubmit() {
     if (this.bookForm.valid) {
-
       const new_book: Book = {
-        name: this.bookForm.value.name || "name",
-        image: this.bookForm.value.image || "image",
+        name: this.bookForm.value.name || 'name',
+        image: this.bookForm.value.image || 'image',
         genre: this.bookForm.value.genre?.split(',') || [],
-        author: this.bookForm.value.author || "author",
-        publishData: this.bookForm.value.publishData || "publishData",
+        author: this.bookForm.value.author || 'author',
+        publishData: this.bookForm.value.publishData || 'publishData',
         price: Number(this.bookForm.value.price),
       };
 
-      if (this.api.addBook(new_book)) {
-        this.bookForm.value.name = '';
-        this.bookForm.value.image = '';
-        this.bookForm.value.genre = '';
-        this.bookForm.value.author = '';
-        this.bookForm.value.publishData = '';
-        this.bookForm.value.price = '';
-
-        console.log("Form Submitted!");
-      }
-    }
-    else {
-      alert("Please fill all the fields!");
+      this.api.addBook(new_book);
+      this.bookForm.value.name = '';
+      this.bookForm.value.image = '';
+      this.bookForm.value.genre = '';
+      this.bookForm.value.author = '';
+      this.bookForm.value.publishData = '';
+      this.bookForm.value.price = '';
+      console.log('Form Submitted!');
+    } else {
+      alert('Please fill all the fields!');
     }
   }
 }

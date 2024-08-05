@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import Book from '../interface/book';
-import { Observable, ReplaySubject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { API_URL } from '../app.config';
 
@@ -8,11 +8,11 @@ import { API_URL } from '../app.config';
   providedIn: 'root'
 })
 export class ApiService {
-  protected obs = new ReplaySubject<Book[]>();
-  protected Books!: Book[];
+  protected obs = new Subject<Book[]>();
+  protected books!: Book[];
 
   constructor(public http: HttpClient) {
-    
+    this.books = [];
   }
 
   subscribeBooks() {
@@ -20,7 +20,10 @@ export class ApiService {
   }
 
   getBooks() {
-    
+    this.http.get<Book[]>(API_URL).subscribe((data) => {
+      this.books = data;
+      this.obs.next(this.books);
+    });
   }
 
   addBook(book: Book) {
@@ -32,6 +35,8 @@ export class ApiService {
   }
 
   deleteBook(book: Book) {
-    
+    this.http.delete(`${API_URL}/${book.id}`).subscribe(() => {
+      this.getBooks();
+    });
   }
 }

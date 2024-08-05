@@ -1,18 +1,6 @@
 {
   "books": [
     {
-      "name": "Dune",
-      "image": "https://picsum.photos/200/300",
-      "genre": [
-        "Science Fiction",
-        "Adventure"
-      ],
-      "author": "Frank Herbert",
-      "publishData": "1965-08-01",
-      "price": 999,
-      "id": "6b4f"
-    },
-    {
       "name": "To Kill a Mockingbird",
       "image": "https://picsum.photos/200/300",
       "genre": [
@@ -23,18 +11,6 @@
       "publishData": "1960-07-11",
       "price": 799,
       "id": "36a7"
-    },
-    {
-      "name": "1984",
-      "image": "https://picsum.photos/200/300",
-      "genre": [
-        "Dystopian",
-        "Science Fiction"
-      ],
-      "author": "George Orwell",
-      "publishData": "1949-06-08",
-      "price": 899,
-      "id": "2a61"
     },
     {
       "name": "The Great Gatsby",

@@ -17,8 +17,10 @@ export class MainComponent {
     this.api.subscribeBooks().subscribe((books) => {
       this.books = books;
     })
+    this.api.getBooks();
   }
   
   DeleteBook(book: Book) {
+    this.api.deleteBook(book);
   }
 }
