@@ -12,7 +12,7 @@ import Book from '../../interface/book';
   styleUrl: './aside.component.scss',
 })
 export class AsideComponent {
-  constructor(public api: ApiService) {}
+  constructor(public api: ApiService) { }
 
   bookForm = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -39,6 +39,8 @@ export class AsideComponent {
 
       this.api.addBook(new_book);
       console.log("Form Submitted!");
+      alert("Form Submitted!");
+      this.bookForm.reset();
 
     }
     else {

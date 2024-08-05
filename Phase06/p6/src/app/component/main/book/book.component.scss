@@ -36,6 +36,12 @@ section {
 
     p {
         margin: 10px;
+        width: 100%;
+        text-wrap: nowrap;
+        overflow-x: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: center;
     }
 
     div {
