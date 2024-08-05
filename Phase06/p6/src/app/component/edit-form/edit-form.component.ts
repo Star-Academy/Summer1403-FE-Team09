@@ -20,6 +20,8 @@ export class EditFormComponent {
     this.book = this.api.getBookById(this.route.snapshot.params['id']) as Book;
 
     if (!this.book) {
+      this.location.back();
+      alert('Book not found!');
       return;
     }
 

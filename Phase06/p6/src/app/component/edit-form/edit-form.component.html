@@ -1,4 +1,3 @@
-@if (book) {
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <div>
       <span (click)="close()">&times;</span>
@@ -33,6 +32,3 @@
   
       <button type="submit" [disabled]="!formGroup.valid">Add Book</button>
   </form>
-} @else {
-  <h3>No book found.</h3>
-}
