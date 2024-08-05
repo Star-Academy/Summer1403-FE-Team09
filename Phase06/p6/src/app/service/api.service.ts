@@ -12,7 +12,7 @@ export class ApiService {
   protected Books!: Book[];
 
   constructor(public http: HttpClient) {
-    
+
   }
 
   subscribeBooks() {
@@ -20,18 +20,20 @@ export class ApiService {
   }
 
   getBooks() {
-    
+
   }
 
   addBook(book: Book) {
-    
+    this.http.post(API_URL, book).subscribe((res: any) => {
+      this.Books.push(book);
+      this.obs.next(this.Books);
+    });
   }
+  editBook(book: Book) {
 
-  editBook(book:Book) {
-    
   }
 
   deleteBook(book: Book) {
-    
+
   }
 }

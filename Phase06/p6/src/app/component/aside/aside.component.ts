@@ -37,16 +37,9 @@ export class AsideComponent {
         price: Number(this.bookForm.value.price),
       };
 
-      if (this.api.addBook(new_book)) {
-        this.bookForm.value.name = '';
-        this.bookForm.value.image = '';
-        this.bookForm.value.genre = '';
-        this.bookForm.value.author = '';
-        this.bookForm.value.publishData = '';
-        this.bookForm.value.price = '';
+      this.api.addBook(new_book);
+      console.log("Form Submitted!");
 
-        console.log("Form Submitted!");
-      }
     }
     else {
       alert("Please fill all the fields!");
