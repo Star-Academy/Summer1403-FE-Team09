@@ -9,8 +9,7 @@
       ],
       "author": "Matt Haig",
       "publishData": "2020-08-13",
-      "price": 1499,
-      "id": "c82c"
+      "price": 1499
     },
     {
       "name": "Dune",
@@ -21,8 +20,7 @@
       ],
       "author": "Frank Herbert",
       "publishData": "1965-08-01",
-      "price": 999,
-      "id": "504c"
+      "price": 999
     },
     {
       "name": "To Kill a Mockingbird",
@@ -33,8 +31,7 @@
       ],
       "author": "Harper Lee",
       "publishData": "1960-07-11",
-      "price": 799,
-      "id": "0dc8"
+      "price": 799
     },
     {
       "name": "1984",
@@ -45,8 +42,7 @@
       ],
       "author": "George Orwell",
       "publishData": "1949-06-08",
-      "price": 899,
-      "id": "9675"
+      "price": 899
     },
     {
       "name": "The Great Gatsby",
@@ -57,8 +53,7 @@
       ],
       "author": "F. Scott Fitzgerald",
       "publishData": "1925-04-10",
-      "price": 699,
-      "id": "5c2f"
+      "price": 699
     },
     {
       "name": "Harry Potter and the Philosopher's Stone",
@@ -69,8 +64,7 @@
       ],
       "author": "J.K. Rowling",
       "publishData": "1997-06-26",
-      "price": 1099,
-      "id": "f4a8"
+      "price": 1099
     },
     {
       "name": "The Catcher in the Rye",
@@ -81,8 +75,7 @@
       ],
       "author": "J.D. Salinger",
       "publishData": "1951-07-16",
-      "price": 849,
-      "id": "ba8b"
+      "price": 849
     },
     {
       "name": "Pride and Prejudice",
@@ -93,8 +86,7 @@
       ],
       "author": "Jane Austen",
       "publishData": "1813-01-28",
-      "price": 599,
-      "id": "e954"
+      "price": 599
     },
     {
       "name": "The Hobbit",
@@ -105,8 +97,7 @@
       ],
       "author": "J.R.R. Tolkien",
       "publishData": "1937-09-21",
-      "price": 949,
-      "id": "2c55"
+      "price": 949
     },
     {
       "name": "The Da Vinci Code",
@@ -117,8 +108,7 @@
       ],
       "author": "Dan Brown",
       "publishData": "2003-03-18",
-      "price": 1299,
-      "id": "2b00"
+      "price": 1299
     },
     {
       "name": "The Alchemist",
@@ -129,8 +119,7 @@
       ],
       "author": "Paulo Coelho",
       "publishData": "1988-01-01",
-      "price": 1099,
-      "id": "bb75"
+      "price": 1099
     },
     {
       "name": "Brave New World",
@@ -141,8 +130,7 @@
       ],
       "author": "Aldous Huxley",
       "publishData": "1932-01-01",
-      "price": 899,
-      "id": "719b"
+      "price": 899
     },
     {
       "name": "The Hunger Games",
@@ -153,8 +141,7 @@
       ],
       "author": "Suzanne Collins",
       "publishData": "2008-09-14",
-      "price": 1199,
-      "id": "96b8"
+      "price": 1199
     },
     {
       "name": "The Shining",
@@ -165,8 +152,7 @@
       ],
       "author": "Stephen King",
       "publishData": "1977-01-28",
-      "price": 1299,
-      "id": "4723"
+      "price": 1299
     },
     {
       "name": "The Girl with the Dragon Tattoo",
@@ -177,8 +163,7 @@
       ],
       "author": "Stieg Larsson",
       "publishData": "2005-08-01",
-      "price": 1399,
-      "id": "06c2"
+      "price": 1399
     },
     {
       "name": "The Hitchhiker's Guide to the Galaxy",
@@ -189,8 +174,7 @@
       ],
       "author": "Douglas Adams",
       "publishData": "1979-10-12",
-      "price": 999,
-      "id": "6084"
+      "price": 999
     },
     {
       "name": "The Kite Runner",
@@ -201,8 +185,7 @@
       ],
       "author": "Khaled Hosseini",
       "publishData": "2003-05-29",
-      "price": 1199,
-      "id": "a209"
+      "price": 1199
     },
     {
       "name": "The Martian",
@@ -213,8 +196,7 @@
       ],
       "author": "Andy Weir",
       "publishData": "2011-09-27",
-      "price": 1299,
-      "id": "695d"
+      "price": 1299
     },
     {
       "name": "The Handmaid's Tale",
@@ -225,8 +207,7 @@
       ],
       "author": "Margaret Atwood",
       "publishData": "1985-06-14",
-      "price": 1099,
-      "id": "d8a6"
+      "price": 1099
     },
     {
       "name": "The Fault in Our Stars",
@@ -237,8 +218,7 @@
       ],
       "author": "John Green",
       "publishData": "2012-01-10",
-      "price": 999,
-      "id": "068a"
+      "price": 999
     },
     {
       "name": "Sapiens: A Brief History of Humankind",
@@ -249,8 +229,7 @@
       ],
       "author": "Yuval Noah Harari",
       "publishData": "2011-01-01",
-      "price": 1599,
-      "id": "e08a"
+      "price": 1599
     },
     {
       "name": "The Lord of the Rings",
@@ -261,8 +240,7 @@
       ],
       "author": "J.R.R. Tolkien",
       "publishData": "1954-07-29",
-      "price": 1799,
-      "id": "4920"
+      "price": 1799
     },
     {
       "name": "Becoming",
@@ -273,8 +251,7 @@
       ],
       "author": "Michelle Obama",
       "publishData": "2018-11-13",
-      "price": 1499,
-      "id": "e638"
+      "price": 1499
     },
     {
       "name": "One Hundred Years of Solitude",
@@ -285,8 +262,7 @@
       ],
       "author": "Gabriel García Márquez",
       "publishData": "1967-05-30",
-      "price": 1099,
-      "id": "a8c9"
+      "price": 1099
     },
     {
       "name": "The Silent Patient",
@@ -297,8 +273,7 @@
       ],
       "author": "Alex Michaelides",
       "publishData": "2019-02-05",
-      "price": 1399,
-      "id": "4163"
+      "price": 1399
     },
     {
       "name": "The Catcher in the Rye",
@@ -309,8 +284,7 @@
       ],
       "author": "J.D. Salinger",
       "publishData": "1951-07-16",
-      "price": 999,
-      "id": "ae5f"
+      "price": 999
     },
     {
       "name": "Educated",
@@ -321,8 +295,7 @@
       ],
       "author": "Tara Westover",
       "publishData": "2018-02-20",
-      "price": 1299,
-      "id": "ae23"
+      "price": 1299
     },
     {
       "name": "The Pillars of the Earth",
@@ -333,8 +306,7 @@
       ],
       "author": "Ken Follett",
       "publishData": "1989-10-01",
-      "price": 1599,
-      "id": "a67b"
+      "price": 1599
     },
     {
       "name": "The Immortal Life of Henrietta Lacks",
@@ -345,8 +317,7 @@
       ],
       "author": "Rebecca Skloot",
       "publishData": "2010-02-02",
-      "price": 1199,
-      "id": "1608"
+      "price": 1199
     },
     {
       "name": "The name of the Wind",
@@ -357,8 +328,7 @@
       ],
       "author": "Patrick Rothfuss",
       "publishData": "2007-03-27",
-      "price": 1499,
-      "id": "a269"
+      "price": 1499
     },
     {
       "id": "e0e8",
@@ -373,28 +343,6 @@
       "author": "A",
       "publishData": "1111-11-11",
       "price": 111111
-    },
-    {
-      "id": "c629",
-      "name": "Mobile",
-      "image": "awd",
-      "genre": [
-        "awdasd"
-      ],
-      "author": "awdawd",
-      "publishData": "2024-08-29",
-      "price": 123
-    },
-    {
-      "id": "a4e9",
-      "name": "Mobile",
-      "image": "awd",
-      "genre": [
-        "awdasd"
-      ],
-      "author": "awdawd",
-      "publishData": "2024-08-29",
-      "price": 123
     }
   ]
 }
