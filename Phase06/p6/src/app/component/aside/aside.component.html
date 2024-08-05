@@ -1,60 +1,34 @@
 <aside>
   <p>Add New Book ✨</p>
-  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()" >
-    <div>
-      <label for="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        formControlName="name"
-      />
-    </div>
-    <div>
-      <label for="image-url">Image URL:</label>
-      <input
-        type="text"
-        id="image-url"
-        name="image-url"
-        formControlName="image"
-      />
-    </div>
-    <div>
-      <label for="genre">Genre:</label>
-      <input
-        type="text"
-        id="genre"
-        name="genre"
-        formControlName="genre"
-      />
-    </div>
-    <div>
-      <label for="author">Author:</label>
-      <input
-        type="text"
-        id="author"
-        name="author"
-        formControlName="author"
-      />
-    </div>
-    <div>
-      <label for="publishData">publish Data:</label>
-      <input
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" formControlName="name" />
+
+    <label for="image-url">Image URL:</label>
+    <input
+      type="text"
+      id="image-url"
+      name="image-url"
+      formControlName="image"
+    />
+
+    <label for="genre">Genre:</label>
+    <input type="text" id="genre" name="genre" formControlName="genre" />
+
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author" formControlName="author" />
+
+    <label for="publishData">publish Data:</label>
+    <input
       type="date"
       id="publishData"
       name="publishData"
       formControlName="publishData"
-      />
-    </div>
-    <div>
-      <label for="price">Price:</label>
-      <input
-        type="number"
-        id="price"
-        name="price"
-        formControlName="price"
-      />
-    </div>
-    <button type="submit"  [disabled]="!bookForm.valid">Add Book</button>
+    />
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" formControlName="price" />
+
+    <button type="submit" [disabled]="!bookForm.valid">Add Book</button>
   </form>
 </aside>
