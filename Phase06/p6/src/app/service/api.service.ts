@@ -25,9 +25,11 @@ export class ApiService {
   }
 
   addBook(book: Book) {
-    this.obs.next(book);
+    this.http.post<Book>(API_URL, book).subscribe((book: Book) => {
+      this.obs.next(book);
+    });
   }
 
-  editBook(book:Book) {
+  editBook(book: Book) {
   }
 }
