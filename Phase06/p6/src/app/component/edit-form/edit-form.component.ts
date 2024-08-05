@@ -26,13 +26,13 @@ export class EditFormComponent {
     }
 
     this.formGroup = new FormGroup({
-      name: new FormControl(this.book.name),
-      image: new FormControl(this.book.image),
-      genre: new FormControl(this.book.genre),
-      author: new FormControl(this.book.author),
-      publishData: new FormControl(this.book.publishData),
-      price: new FormControl(this.book.price, [
-        Validators.pattern('^[0-9]*$'),
+      name: new FormControl(this.book.name, Validators.required),
+      image: new FormControl(this.book.image, Validators.required),
+      genre: new FormControl(this.book.genre.join(', '), Validators.required),
+      author: new FormControl(this.book.author, Validators.required),
+      publishData: new FormControl(this.book.publishData, Validators.required),
+      price: new FormControl(this.book.price, [Validators.required,
+      Validators.pattern('^[0-9]*$'),
       ]),
     });
   }
@@ -46,7 +46,9 @@ export class EditFormComponent {
         author: this.formGroup.value.author || this.book.author,
         publishData: this.formGroup.value.publishData || this.book.publishData,
         price: this.formGroup.value.price ?? this.book.price,
+        id: this.book.id,
       };
+
       this.api.editBook(new_book);
       this.location.back();
       console.log("Form Submitted!");
