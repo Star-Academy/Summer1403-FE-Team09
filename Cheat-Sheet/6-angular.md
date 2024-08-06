@@ -1,5 +1,7 @@
 <h1 style="font-size: 50px; color: gold; opacity: 0.8; text-align: center;">Angular</h1>
 
+- [document](https://star-academy.github.io/codestar-documents/docs/frontend/phase06-angular/)
+
 <h3 style="width: 1000px; margin-left: auto; margin-right: auto; font-size: 30px;"><i>Web frameworks:</i></h3>
 
 <pre style="width: 1000px; margin-left: auto; margin-right: auto; font-size: 20px;">
@@ -112,7 +114,7 @@ Use an InjectionToken object as provider token for non-class dependencies. For u
 When you want to run a given function in an injection context without already being in one, you can do so with runInInjectionContext. This requires access to a given injector.
 Angular provides the assertInInjectionContext helper function to assert that the current context is an injection context.
 With hierarchical dependency injection, you can isolate sections of the application and give them their own private dependencies not shared with the rest of the application, or have parent components share certain dependencies with its child components only but not with the rest of the component tree, and so on. Hierarchical dependency injection enables you to share dependencies between different parts of the application only when and if you need to.
-There are types of injectors like NullInjector, EnvironmentInjector (provideIn Platform), ElementalInjectors, etc. 
+There are types of injectors like NullInjector, EnvironmentInjector (provideIn Platform), ElementalInjectors, etc.
 </pre>
 <hr style="width: 1200px; margin-left: auto; margin-right: auto;"/>
 <h3 style="width: 1000px; margin-left: auto; margin-right: auto; font-size: 30px;"><i>Pipes:</i></h3>
