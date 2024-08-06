@@ -1,0 +1,70 @@
+body {
+  display: flex;
+}
+
+aside {
+  width: 20%;
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+#main {
+  width: 80%;
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+header {
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+footer {
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+#container {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#container .card {
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #fff;
+  width: 22%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#container .card h3 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+#container .card img {
+  width: 80%;
+  margin-top: 10px;
+}
+#container .card p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}/*# sourceMappingURL=css.css.map */
