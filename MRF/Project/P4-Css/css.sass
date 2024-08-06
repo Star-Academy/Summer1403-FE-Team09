@@ -1,7 +1,5 @@
-
-@mixin boxSizing($w)
-    width: #{$w}
-    box-sizing: border-box
+@mixin boxSizing($value: border-box)
+    box-sizing: #{$value}
 
 @mixin sectionStyle($bg_color:#fff)
     margin: 10px
@@ -10,15 +8,24 @@
     border-radius: 5px
     background-color: #{$bg_color}
 
-body
+@mixin flex($direction: row, $justify: center, $align: stretch, $wrap: no-wrap)
     display: flex
+    flex-direction: #{$direction}
+    justify-content: #{$justify}
+    align-items: #{$align}
+    flex-wrap: #{$wrap}
+
+body
+    @include flex()
 
 aside
-    @include boxSizing(20%)
+    width: 20%
+    @include boxSizing()
     @include sectionStyle(#f2f2f2)
 
 #main
-    @include boxSizing(80%)
+    width: 80%
+    @include boxSizing()
     @include sectionStyle()
 
 header
@@ -28,17 +35,13 @@ footer
     @include sectionStyle(#f2f2f2)
 
 #container
-    display: flex
-    align-items: stretch
-    justify-content: space-between
-    flex-wrap: wrap
+    @include flex($align: stretch, $justify: space-between, $wrap: wrap)
 
     .card
+        width: 22%
+        @include boxSizing()
         @include sectionStyle()
-        @include boxSizing(22%)
-        display: flex
-        flex-direction: column
-        align-items: center
+        @include flex(column, center)
 
         h3
             margin-top: 10px
