@@ -1,5 +1,10 @@
 import { Component, HostListener } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import Book from '../../interface/book';
 import { ApiService } from '../../service/api.service';
 import { ActivatedRoute } from '@angular/router';
@@ -10,13 +15,27 @@ import { Location } from '@angular/common';
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './edit-form.component.html',
-  styleUrl: './edit-form.component.scss'
+  styleUrl: './edit-form.component.scss',
 })
 export class EditFormComponent {
-  formGroup!: FormGroup;
+  formGroup: FormGroup = new FormGroup({
+    name: new FormControl('', Validators.required),
+    image: new FormControl('', Validators.required),
+    genre: new FormControl('', Validators.required),
+    author: new FormControl('', Validators.required),
+    publishData: new FormControl('', Validators.required),
+    price: new FormControl('', [
+      Validators.required,
+      Validators.pattern('^[0-9]+(.[0-9]{1,2})?$'),
+    ]),
+  });
   protected book!: Book;
 
-  constructor(public api: ApiService, public route: ActivatedRoute, private location: Location) {
+  constructor(
+    public api: ApiService,
+    public route: ActivatedRoute,
+    private location: Location
+  ) {
     this.book = this.api.getBookById(this.route.snapshot.params['id']) as Book;
 
     if (!this.book) {
@@ -31,8 +50,9 @@ export class EditFormComponent {
       genre: new FormControl(this.book.genre.join(', '), Validators.required),
       author: new FormControl(this.book.author, Validators.required),
       publishData: new FormControl(this.book.publishData, Validators.required),
-      price: new FormControl(this.book.price, [Validators.required,
-      Validators.pattern('^[0-9]+(\.[0-9]{1,2})?$'),
+      price: new FormControl(this.book.price, [
+        Validators.required,
+        Validators.pattern('^[0-9]+(.[0-9]{1,2})?$'),
       ]),
     });
   }
@@ -53,7 +73,7 @@ export class EditFormComponent {
       this.location.back();
     }
   }
-  
+
   @HostListener('document:keydown.escape', ['$event'])
   close() {
     this.location.back();
