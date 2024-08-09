@@ -2,12 +2,12 @@
   "books": [
     {
       "id": "6fbc",
-      "name": "The Catcher in the Ryeeeeee",
+      "name": "test",
       "image": "https://picsum.photos/200/300",
       "genre": [
         "Fiction",
-        "   Coming-of-age",
-        "  qwwww"
+        "            Coming-of-age",
+        "           qwwww"
       ],
       "author": "J.D. Salinger",
       "publishData": "1951-07-16",
