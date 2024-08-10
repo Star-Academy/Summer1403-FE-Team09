@@ -8,8 +8,8 @@ import { API_URL } from '../app.config';
   providedIn: 'root'
 })
 export class ApiService {
-  protected obs = new BehaviorSubject<Book[]>([]);
-  protected books!: Book[];
+  private obs = new BehaviorSubject<Book[]>([]);
+  private books!: Book[];
 
   constructor(public http: HttpClient) {
     this.books = [];
