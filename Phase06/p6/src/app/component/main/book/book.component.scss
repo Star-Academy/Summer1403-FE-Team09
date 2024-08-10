@@ -1,77 +1,79 @@
+@mixin flex($dir: "row") {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin overflow() {
+  text-wrap: nowrap;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    padding: 20px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    background-color: #cec5c5;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
-    h2 {
-        margin-bottom: 10px;
-        font-weight: 300;
-        width: 100%;
-        text-decoration: underline;
-        text-wrap: nowrap;
-        overflow-x: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        text-align: center;
-        color: rgb(37, 70, 70);
+  @include flex("column");
+
+  margin: 0.7rem;
+  padding: 1.4rem;
+  box-shadow: 0.4rem 0.4rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.4rem;
+  background-color: #cec5c5;
+
+  h2 {
+    @include overflow();
+
+    margin-bottom: 0.7rem;
+    font-weight: 300;
+    width: 100%;
+    text-decoration: underline;
+    text-align: center;
+    color: rgb(37, 70, 70);
+  }
+
+  h4 {
+    margin-block-end: 0.7rem;
+    font-weight: 600;
+  }
+
+  img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+  }
+
+  p {
+    margin: 0.7rem;
+    width: 100%;
+    @include overflow();
+    text-align: center;
+  }
+
+  div {
+    @include flex();
+    margin: 0.3rem;
+    padding: 0.7rem;
+    gap: 20px;
+
+    span {
+      color: rgb(138, 2, 2);
     }
 
-    h4 {
-        margin-bottom: 10px;
-        font-weight: 600;
+    button {
+      background-color: rgb(138, 2, 2);
+      color: #fff;
+      padding: 1rem;
+      border: none;
+      border-radius: 0.4rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 1.25rem;
+
+      &:hover {
+        background-color: rgb(255, 255, 255);
+        color: rgb(138, 2, 2);
+      }
     }
-
-    img {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-    }
-
-    p {
-        margin: 10px;
-        width: 100%;
-        text-wrap: nowrap;
-        overflow-x: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        text-align: center;
-    }
-
-    div {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        margin: 5px;
-        padding: 10px;
-        gap: 20px;
-
-        span {
-            color: rgb(138, 2, 2);
-        }
-
-        button {
-            background-color: rgb(138, 2, 2);
-            color: #fff;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 1.25rem;
-
-            &:hover {
-                background-color: rgb(255, 255, 255);
-                color: rgb(138, 2, 2);
-            }
-        }
-    }
+  }
 }
