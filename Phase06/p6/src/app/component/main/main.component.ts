@@ -11,17 +11,17 @@ import { BookComponent } from './book/book.component';
   styleUrl: './main.component.scss',
 })
 export class MainComponent implements OnInit {
-  private books!: Book[];
+  protected books!: Book[];
 
   constructor(protected api: ApiService) {}
 
-  ngOnInit() {  
+  ngOnInit() {
     this.api.subscribeBooks().subscribe((books) => {
       this.books = books;
     })
     this.api.getBooks();
   }
-  
+
   DeleteBook(book: Book) {
     this.api.deleteBook(book);
   }
