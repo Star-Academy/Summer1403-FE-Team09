@@ -11,7 +11,7 @@ import { BookComponent } from './book/book.component';
   styleUrl: './main.component.scss',
 })
 export class MainComponent implements OnInit {
-  public books!: Book[];
+  private books!: Book[];
 
   constructor(protected api: ApiService) {}
 
