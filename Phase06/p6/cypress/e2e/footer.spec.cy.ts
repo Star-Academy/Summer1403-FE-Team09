@@ -9,6 +9,5 @@ describe("footer test", () => {
     it('when click on gtihub repo link', () => {
         cy.visit('http://localhost:4200/');
         cy.get('footer').get('p').get('a').last().should("have.attr", "href", "https://github.com/Star-Academy/Summer1403-FE-Team09");
-
     });
 });
