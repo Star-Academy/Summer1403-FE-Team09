@@ -1,4 +1,4 @@
-aside {
+#aside {
   display: flex;
   flex-direction: column;
 
@@ -11,7 +11,7 @@ aside {
 
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
 
-  form {
+  #form {
     margin-block-start: 1.25rem;
 
     display: flex;
