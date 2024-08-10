@@ -16,7 +16,7 @@ describe('HeaderComponent', () => {
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     headerTag = fixture.debugElement.query(By.css('header')).nativeElement;
-    pTag = fixture.debugElement.query(By.css('header')).nativeElement;
+    pTag = fixture.debugElement.query(By.css('header p')).nativeElement;
   });
 
   it('component should be created when initial', () => {
@@ -35,8 +35,8 @@ describe('HeaderComponent', () => {
   });
 
   it('header tag have background color #999 should be created when initial', () => {
-    let styles = window.getComputedStyle(pTag);
+    let styles = window.getComputedStyle(headerTag);
     fixture.detectChanges();
-    expect(styles.backgroundColor).toEqual('#999');
+    expect(styles.backgroundColor).toEqual('rgb(153, 153, 153)');
   });
 });
