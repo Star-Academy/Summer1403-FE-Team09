@@ -47,9 +47,9 @@ export class UserService {
       this.http.post<User>(USER_API_URL, user).subscribe(
         (u: User) => {
           if (!u) {
-            this.user = u;
             resolve("User not found");
           } else {
+            this.user = u;
             resolve("ok");
           }
         }
