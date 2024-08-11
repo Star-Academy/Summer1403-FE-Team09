@@ -10,7 +10,11 @@
     "api": "npx json-server db.json",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "format": "prettier --write -u --ignore 'node_modules/' .",
+    "format-check": "prettier --check -u --ignore 'node_modules/' .",
+    "lint-check": "eslint .",
+    "lint": "eslint . --fix"
   },
   "private": true,
   "dependencies": {
@@ -37,7 +41,7 @@
     "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/user-event": "^14.5.2",
     "@types/jasmine": "~5.1.0",
-    "cypress": "^13.13.2",
+    "cypress": "latest",
     "jasmine": "^5.2.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
@@ -45,7 +49,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.5.2",
-    "cypress": "latest"
+    "prettier": "^3.3.3",
+    "typescript": "~5.5.2"
   }
 }
