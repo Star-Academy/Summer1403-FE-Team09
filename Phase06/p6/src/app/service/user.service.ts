@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {User} from "../interface/book";
 import {HttpClient, HttpResponse} from "@angular/common/http";
+import { API_URL } from '../app.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   private user: User | undefined = undefined;
-  baseUrl: string = "http://localhost:3000/users";
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +17,7 @@ export class UserService {
 
   loginUser(user: {email: string, password: string}): string {
     let response: string = "";
-    this.http.get<User[]>(this.baseUrl).subscribe((users: User[]) => {
+    this.http.get<User[]>(`${API_URL}/users`).subscribe((users: User[]) => {
       const u = users.find((u: User) => user.email === u.email);
       if (!u) {
         response = "User not found";
@@ -33,14 +33,14 @@ export class UserService {
     return response;
   }
 
-  signUpUser(user: {
+  async signUpUser(user: {
     firstName: string,
     lastName: string,
     email: string,
     password: string,
-  }): string {
+  }): Promise<string> {
     let response: string = "";
-    this.http.post<User>(this.baseUrl, user).subscribe((u: User) => {
+    await this.http.post<User>(`${API_URL}/users`, user).subscribe((u: User) => {
       console.log(u);
       if (!u) {
         this.user = u;

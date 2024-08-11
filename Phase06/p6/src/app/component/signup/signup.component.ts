@@ -29,9 +29,9 @@ export class SignupComponent {
 
   constructor(private userService: UserService, private location: Location) {}
 
-  onSubmit() {
+  async onSubmit() {
     if (this.formGroup.valid) {
-      const response = this.userService.signUpUser({
+      const response = await this.userService.signUpUser({
         firstName: this.formGroup.value.firstName,
         lastName: this.formGroup.value.lastName,
         email: this.formGroup.value.email,
