@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import {Router, RouterLink, RouterLinkActive} from '@angular/router';
 import { User } from '../../interface/book';
 import { UserService } from '../../service/user.service';
 
@@ -13,7 +13,7 @@ import { UserService } from '../../service/user.service';
 export class HeaderComponent {
   user!: User | undefined;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     this.userService.subscribeUser().subscribe((user) => {
@@ -23,5 +23,6 @@ export class HeaderComponent {
 
   handleLogout(): void {
     this.userService.logOut();
+    this.router.navigate(['']);
   }
 }
