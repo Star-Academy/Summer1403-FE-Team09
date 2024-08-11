@@ -1,8 +1,8 @@
-import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
-import {BookComponent} from './book.component';
-import {ActivatedRoute} from '@angular/router';
-import {screen, render, fireEvent} from '@testing-library/angular';
-import userEvent, {UserEvent} from '@testing-library/user-event';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { BookComponent } from './book.component';
+import { ActivatedRoute } from '@angular/router';
+import { screen, render, fireEvent } from '@testing-library/angular';
+import userEvent, { UserEvent } from '@testing-library/user-event';
 
 describe('BookComponent', () => {
   let component: BookComponent;
@@ -12,7 +12,7 @@ describe('BookComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [BookComponent],
-      providers: [{provide: ActivatedRoute, useValue: {params: {id: 1}}}],
+      providers: [{ provide: ActivatedRoute, useValue: { params: { id: 1 } } }],
     }).compileComponents();
 
     user = userEvent.setup();

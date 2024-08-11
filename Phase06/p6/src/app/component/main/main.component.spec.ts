@@ -1,10 +1,10 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {MainComponent} from './main.component';
-import {ApiService} from '../../service/api.service';
-import {provideHttpClient} from '@angular/common/http';
-import {ActivatedRoute} from '@angular/router';
-import {render, screen} from '@testing-library/angular';
-import {of} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MainComponent } from './main.component';
+import { ApiService } from '../../service/api.service';
+import { provideHttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { render, screen } from '@testing-library/angular';
+import { of } from 'rxjs';
 
 describe('main test', () => {
   let component: MainComponent;
@@ -22,8 +22,11 @@ describe('main test', () => {
       imports: [MainComponent],
       providers: [
         provideHttpClient(),
-        {provide: ActivatedRoute, useValue: {snapshot: {params: {id: '1'}}}},
-        {provide: ApiService, useValue: spy},
+        {
+          provide: ActivatedRoute,
+          useValue: { snapshot: { params: { id: '1' } } },
+        },
+        { provide: ApiService, useValue: spy },
       ],
     }).compileComponents();
 

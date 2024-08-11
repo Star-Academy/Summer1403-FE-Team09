@@ -1,9 +1,9 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {AsideComponent} from './aside.component';
-import {provideHttpClient} from '@angular/common/http';
-import {ApiService} from '../../service/api.service';
-import {render, screen} from '@testing-library/angular';
-import userEvent, {UserEvent} from '@testing-library/user-event';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AsideComponent } from './aside.component';
+import { provideHttpClient } from '@angular/common/http';
+import { ApiService } from '../../service/api.service';
+import { render, screen } from '@testing-library/angular';
+import userEvent, { UserEvent } from '@testing-library/user-event';
 
 describe('AsideComponent', () => {
   let component: AsideComponent;
