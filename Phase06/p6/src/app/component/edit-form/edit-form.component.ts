@@ -5,7 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import Book from '../../interface/book';
+import Book from '../../interface/interface';
 import { ApiService } from '../../service/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';

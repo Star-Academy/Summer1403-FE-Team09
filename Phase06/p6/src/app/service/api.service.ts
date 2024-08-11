@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import Book from '../interface/book';
+import Book from '../interface/interface';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { BOOK_API_URL } from '../app.config';

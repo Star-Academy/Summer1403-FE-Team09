@@ -5,11 +5,16 @@
   justify-content: center;
 
   block-size: calc(100vh - 7.5rem);
-  min-block-size: calc(100vh - 7.5rem);
 
+  inline-size: 100%;
   background-color: hsl(0, 0%, 85%);
 
+  overflow-y: auto;
+  scrollbar-width: thin;
+
   form {
+    margin-block: 4rem;
+    inline-size: 30%;
     background-color: hsl(0, 0%, 40%);
     color: hsl(0, 0%, 95%);
 
@@ -76,6 +81,11 @@
 
     .text-danger {
       color: hsl(210, 100%, 95%);
+    }
+
+    small {
+      text-align: center;
+      text-wrap: wrap;
     }
   }
 }

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import Book from '../../../interface/book';
+import Book from '../../../interface/interface';
 
 @Component({
   selector: 'app-book',

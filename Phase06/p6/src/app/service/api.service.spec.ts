@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { ApiService } from './api.service';
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import Book from '../interface/book';
+import Book from '../interface/interface';
 import { of } from 'rxjs';
 import { BOOK_API_URL } from '../app.config';
 

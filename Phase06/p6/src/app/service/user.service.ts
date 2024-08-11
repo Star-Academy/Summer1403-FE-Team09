@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-import { User } from '../interface/book';
+import { User } from '../interface/interface';
 import { USER_API_URL } from '../app.config';
 
 @Injectable({
