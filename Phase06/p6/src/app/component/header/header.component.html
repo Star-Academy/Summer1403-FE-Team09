@@ -2,8 +2,13 @@
   <nav>
     <ul>
       <li routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</li>
-      <li routerLink="login" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login</li>
-      <li routerLink="signup" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign Up</li>
+      @if (user) {
+        <li routerLink="profile" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Profile</li>
+        <li (click)="handleLogout()">Log out</li>
+      } @else {
+        <li routerLink="login" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login</li>
+        <li routerLink="signup" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign Up</li>
+      }
     </ul>
   </nav>
 </header>

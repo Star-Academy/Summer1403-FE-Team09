@@ -11,8 +11,12 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUser(id: string): User | undefined {
+  getUser(): User | undefined {
     return this.user;
+  }
+
+  logOut(): void {
+    this.user = undefined;
   }
 
   loginUser(user: {email: string, password: string}): string {

@@ -1,0 +1,20 @@
+import { Component } from '@angular/core';
+import {User} from "../../interface/book";
+import {UserService} from "../../service/user.service";
+
+@Component({
+  selector: 'app-profile',
+  standalone: true,
+  imports: [],
+  templateUrl: './profile.component.html',
+  styleUrl: './profile.component.scss'
+})
+export class ProfileComponent {
+  user!: User | undefined;
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+    this.user = this.userService.getUser();
+  }
+}
