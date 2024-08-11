@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import {User} from "../../interface/book";
-import {UserService} from "../../service/user.service";
+import { User } from '../../interface/book';
+import { UserService } from '../../service/user.service';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
   imports: [],
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.scss'
+  styleUrl: './profile.component.scss',
 })
 export class ProfileComponent {
   user!: User | undefined;
@@ -15,6 +15,8 @@ export class ProfileComponent {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.user = this.userService.getUser();
+    this.userService.subscribeUser().subscribe((user) => {
+      this.user = user;
+    });
   }
 }

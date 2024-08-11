@@ -1,4 +1,4 @@
-@mixin flex($dir: "row") {
+@mixin flex($dir: 'row') {
   display: flex;
   flex-direction: #{$dir};
   justify-content: center;
@@ -13,7 +13,7 @@
 }
 
 section {
-  @include flex("column");
+  @include flex('column');
 
   margin: 0.7rem;
   padding: 1.4rem;

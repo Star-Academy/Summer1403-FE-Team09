@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {RouterLink, RouterLinkActive} from "@angular/router";
-import {User} from "../../interface/book";
-import {UserService} from "../../service/user.service";
+import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { User } from '../../interface/book';
+import { UserService } from '../../service/user.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +16,9 @@ export class HeaderComponent {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.user = this.userService.getUser();
+    this.userService.subscribeUser().subscribe((user) => {
+      this.user = user;
+    });
   }
 
   handleLogout(): void {

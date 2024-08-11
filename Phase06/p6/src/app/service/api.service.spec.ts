@@ -1,10 +1,10 @@
-import {TestBed} from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
-import {ApiService} from './api.service';
-import {HttpClient, HttpHandler} from '@angular/common/http';
+import { ApiService } from './api.service';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import Book from '../interface/book';
-import {of} from 'rxjs';
-import {BOOK_API_URL} from '../app.config';
+import { of } from 'rxjs';
+import { BOOK_API_URL } from '../app.config';
 
 describe('ApiService', () => {
   let service: ApiService;
@@ -20,7 +20,7 @@ describe('ApiService', () => {
     ]);
 
     TestBed.configureTestingModule({
-      providers: [ApiService, {provide: HttpClient, useValue: spy}],
+      providers: [ApiService, { provide: HttpClient, useValue: spy }],
     });
     service = TestBed.inject(ApiService);
     httpClientSpy = TestBed.inject(HttpClient) as jasmine.SpyObj<HttpClient>;

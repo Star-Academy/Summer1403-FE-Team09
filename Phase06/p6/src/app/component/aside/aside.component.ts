@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {FormGroup, FormControl} from '@angular/forms';
-import {ReactiveFormsModule, Validators} from '@angular/forms';
-import {ApiService} from '../../service/api.service';
+import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, Validators } from '@angular/forms';
+import { ApiService } from '../../service/api.service';
 import Book from '../../interface/book';
 
 @Component({
