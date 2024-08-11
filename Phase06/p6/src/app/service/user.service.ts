@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {User} from "../interface/book";
 import {HttpClient} from "@angular/common/http";
+import { USER_API_URL } from '../app.config';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class UserService {
 
   loginUser(user: {email: string, password: string}): string {
     let response: string = "";
-    this.http.get<User[]>(this.baseUrl).subscribe((users: User[]) => {
+    this.http.get<User[]>(USER_API_URL).subscribe((users: User[]) => {
       const u = users.find((u: User) => user.email === u.email);
       if (!u) {
         response = "User not found";
@@ -37,21 +38,23 @@ export class UserService {
     return response;
   }
 
-  async signUpUser(user: {
+  signUpUser(user: {
     firstName: string,
     lastName: string,
     email: string,
     password: string,
   }): Promise<string> {
-    let response: string = "";
-    await this.http.post<User>(this.baseUrl, user).subscribe((u: User) => {
-      console.log(u);
-      if (!u) {
-        this.user = u;
-        response = "User not found";
-      }
-      else
-        response = "ok";
+    return new Promise((resolve) => {
+      this.http.post<User>(USER_API_URL, user).subscribe(
+        (u: User) => {
+          if (!u) {
+            this.user = u;
+            resolve("User not found");
+          } else {
+            resolve("ok");
+          }
+        }
+      );
     });
 
     return response;

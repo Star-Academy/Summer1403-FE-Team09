@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {UserService} from "../../service/user.service";
-import {Location} from "@angular/common";
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
+import { UserService } from "../../service/user.service";
+import { Location } from "@angular/common";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -27,23 +28,30 @@ export class SignupComponent {
     ])
   });
 
-  constructor(private userService: UserService, private location: Location) {}
+  constructor(private userService: UserService, private router: Router) {}
 
-  async onSubmit() {
+  onSubmit() {
     if (this.formGroup.valid) {
-      const response = await this.userService.signUpUser({
+      this.userService.signUpUser({
         firstName: this.formGroup.value.firstName,
         lastName: this.formGroup.value.lastName,
         email: this.formGroup.value.email,
         password: this.formGroup.value.password,
+      }).then((response: string) => {
+        if (response !== 'ok') {
+          alert(response);
+        }
+        else {
+          alert("User created successfully.");
+          this.router.navigate(['/']);
+        }
       });
+    }
 
-      if (response !== 'ok') {
-        alert(response + "Hi");
-        return;
-      }
-    } else {
-      alert("There is an error in your fields.")
+    else {
+      alert("There is an error in your fields.");
+      this.formGroup.markAsDirty();
+      
     }
   }
 }

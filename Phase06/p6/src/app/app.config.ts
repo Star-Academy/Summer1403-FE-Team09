@@ -12,4 +12,5 @@ export const appConfig: ApplicationConfig = {
   ],
 };
 
-export const API_URL = 'http://localhost:3000/books';
+export const BOOK_API_URL = 'http://localhost:3000/books';
+export const USER_API_URL = 'http://localhost:3000/users';
