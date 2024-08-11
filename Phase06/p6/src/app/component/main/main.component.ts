@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../service/api.service';
-import Book from '../../interface/book';
 import { BookComponent } from './book/book.component';
+import Book from '../../interface/book';
 
 @Component({
   selector: 'app-main',
@@ -13,7 +13,7 @@ import { BookComponent } from './book/book.component';
 export class MainComponent implements OnInit {
   protected books!: Book[];
 
-  constructor(protected api: ApiService) {}
+  constructor(protected api: ApiService) { }
 
   ngOnInit() {
     this.api.subscribeBooks().subscribe((books) => {
