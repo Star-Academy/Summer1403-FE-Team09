@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import Book from '../interface/book';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -7,12 +7,15 @@ import { API_URL } from '../app.config';
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class ApiService implements OnInit {
   private obs = new BehaviorSubject<Book[]>([]);
   private books!: Book[];
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient) { }
+
+  ngOnInit() {
     this.books = [];
+    this.getBooks(); // fisrt api call ti inilial books 
   }
 
   subscribeBooks() {
@@ -24,10 +27,6 @@ export class ApiService {
       this.books = data;
       this.obs.next(this.books);
     });
-  }
-
-  getBookById(id: string) {
-    return this.books.find((b) => b.id === id);
   }
 
   addBook(book: Book) {
@@ -59,5 +58,9 @@ export class ApiService {
         this.obs.next(this.books);
       }
     });
+  }
+
+  getBookById(id: string) {
+    return this.books.find((b) => b.id === id);
   }
 }
