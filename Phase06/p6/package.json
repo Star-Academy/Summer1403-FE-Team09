@@ -10,7 +10,11 @@
     "api": "npx json-server db.json",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "format": "prettier --write -u --ignore 'node_modules/' .",
+    "format-check": "prettier --check -u --ignore 'node_modules/' .",
+    "lint-check": "eslint .",
+    "lint": "eslint . --fix"
   },
   "private": true,
   "dependencies": {
