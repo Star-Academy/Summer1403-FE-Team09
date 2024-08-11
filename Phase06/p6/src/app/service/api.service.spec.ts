@@ -4,7 +4,7 @@ import {ApiService} from './api.service';
 import {HttpClient, HttpHandler} from '@angular/common/http';
 import Book from '../interface/book';
 import {of} from 'rxjs';
-import {API_URL} from '../app.config';
+import {BOOK_API_URL} from '../app.config';
 
 describe('ApiService', () => {
   let service: ApiService;
@@ -59,7 +59,7 @@ describe('ApiService', () => {
       expect(books).toEqual(mockBooks);
     });
 
-    expect(httpClientSpy.get).toHaveBeenCalledOnceWith(API_URL);
+    expect(httpClientSpy.get).toHaveBeenCalledOnceWith(BOOK_API_URL);
   });
 
   it('should find book by id when call the function', () => {
