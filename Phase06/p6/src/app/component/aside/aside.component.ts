@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { ReactiveFormsModule, Validators } from '@angular/forms';
-import { ApiService } from '../../service/api.service';
+import {Component} from '@angular/core';
+import {FormGroup, FormControl} from '@angular/forms';
+import {ReactiveFormsModule, Validators} from '@angular/forms';
+import {ApiService} from '../../service/api.service';
 import Book from '../../interface/book';
 
 @Component({
@@ -12,9 +12,9 @@ import Book from '../../interface/book';
   styleUrl: './aside.component.scss',
 })
 export class AsideComponent {
-  constructor(public api: ApiService) { }
+  constructor(public api: ApiService) {}
 
-  bookForm: FormGroup  = new FormGroup({
+  bookForm: FormGroup = new FormGroup({
     name: new FormControl('', Validators.required),
     image: new FormControl('', Validators.required),
     genre: new FormControl('', Validators.required),
@@ -22,7 +22,7 @@ export class AsideComponent {
     publishData: new FormControl('', Validators.required),
     price: new FormControl('', [
       Validators.required,
-      Validators.pattern('^[0-9]+(\.[0-9]{1,2})?$'),
+      Validators.pattern('^[0-9]+(.[0-9]{1,2})?$'),
     ]),
   });
 
@@ -38,13 +38,11 @@ export class AsideComponent {
       };
 
       this.api.addBook(new_book);
-      console.log("Form Submitted!");
-      alert("Form Submitted!");
+      console.log('Form Submitted!');
+      alert('Form Submitted!');
       this.bookForm.reset();
-
-    }
-    else {
-      alert("Please fill all the fields!");
+    } else {
+      alert('Please fill all the fields!');
     }
   }
 }

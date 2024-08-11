@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -6,9 +6,9 @@ import {
   Validators,
 } from '@angular/forms';
 import Book from '../../interface/book';
-import { ApiService } from '../../service/api.service';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import {ApiService} from '../../service/api.service';
+import {ActivatedRoute} from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-edit-form',
@@ -37,7 +37,7 @@ export class EditFormComponent {
     private location: Location
   ) {}
 
-  ngOnInit() : void {
+  ngOnInit(): void {
     this.book = this.api.getBookById(this.route.snapshot.params['id']) as Book;
 
     if (!this.book) {

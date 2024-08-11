@@ -1,9 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AsideComponent } from './aside.component';
-import { provideHttpClient } from '@angular/common/http';
-import { ApiService } from '../../service/api.service';
-import { render, screen } from '@testing-library/angular';
-import userEvent, { UserEvent } from '@testing-library/user-event';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {AsideComponent} from './aside.component';
+import {provideHttpClient} from '@angular/common/http';
+import {ApiService} from '../../service/api.service';
+import {render, screen} from '@testing-library/angular';
+import userEvent, {UserEvent} from '@testing-library/user-event';
 
 describe('AsideComponent', () => {
   let component: AsideComponent;
@@ -14,9 +14,8 @@ describe('AsideComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AsideComponent],
-      providers: [provideHttpClient()]
-    })
-    .compileComponents();
+      providers: [provideHttpClient()],
+    }).compileComponents();
 
     serviceSpy = TestBed.inject(ApiService) as jasmine.SpyObj<ApiService>;
     fixture = TestBed.createComponent(AsideComponent);
@@ -44,9 +43,15 @@ describe('AsideComponent', () => {
   it('the button should be disabled when the form is empty', () => {
     render(AsideComponent);
     const nameInput = screen.getByLabelText('Name:') as HTMLInputElement;
-    expect(nameInput.textContent).withContext('Name input should be empty').toBe('');
-    const button = screen.getByText('Add Book', { exact: true }) as HTMLButtonElement;
-    expect(button.attributes.getNamedItem('disabled')).withContext('Button should be disabled').toBeTruthy();
+    expect(nameInput.textContent)
+      .withContext('Name input should be empty')
+      .toBe('');
+    const button = screen.getByText('Add Book', {
+      exact: true,
+    }) as HTMLButtonElement;
+    expect(button.attributes.getNamedItem('disabled'))
+      .withContext('Button should be disabled')
+      .toBeTruthy();
   });
 
   it('the button should be enabled when the form is not empty', async () => {
@@ -59,12 +64,18 @@ describe('AsideComponent', () => {
     await user.type(genre, 'test');
     const author = screen.getByLabelText('Author:') as HTMLInputElement;
     await user.type(author, 'test');
-    const publishData = screen.getByLabelText('publish Data:') as HTMLInputElement;
+    const publishData = screen.getByLabelText(
+      'publish Data:'
+    ) as HTMLInputElement;
     await user.type(publishData, '2020-01-01');
     const price = screen.getByLabelText('Price:') as HTMLInputElement;
     await user.type(price, '10');
     fixture.detectChanges();
-    const button = screen.getByText('Add Book', { exact: true }) as HTMLButtonElement;
-    expect(button.attributes.getNamedItem('disabled')).withContext('Button should be enabled').toEqual(null);
+    const button = screen.getByText('Add Book', {
+      exact: true,
+    }) as HTMLButtonElement;
+    expect(button.attributes.getNamedItem('disabled'))
+      .withContext('Button should be enabled')
+      .toEqual(null);
   });
 });

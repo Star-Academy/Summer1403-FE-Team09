@@ -15,8 +15,7 @@ describe('Aside spec', () => {
         for (let input of $inputs) {
           if (input.id == 'publishData') {
             cy.wrap(input).type('2020-01-01');
-          }
-          else if (input.id == 'price') {
+          } else if (input.id == 'price') {
             cy.wrap(input).type('10');
           } else {
             cy.wrap(input).type('test');

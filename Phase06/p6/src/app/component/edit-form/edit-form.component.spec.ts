@@ -1,9 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { EditFormComponent } from './edit-form.component';
-import { provideHttpClient } from '@angular/common/http';
-import { screen, render } from '@testing-library/angular';
-import userEvent, { UserEvent } from '@testing-library/user-event';
-import { ActivatedRoute } from '@angular/router';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {EditFormComponent} from './edit-form.component';
+import {provideHttpClient} from '@angular/common/http';
+import {screen, render} from '@testing-library/angular';
+import userEvent, {UserEvent} from '@testing-library/user-event';
+import {ActivatedRoute} from '@angular/router';
 
 describe('EditFormComponent', () => {
   let component: EditFormComponent;
@@ -17,7 +17,7 @@ describe('EditFormComponent', () => {
         provideHttpClient(),
         {
           provide: ActivatedRoute,
-          useValue: { snapshot: { params: { id: 1 } } }
+          useValue: {snapshot: {params: {id: 1}}},
         },
       ],
     }).compileComponents();
