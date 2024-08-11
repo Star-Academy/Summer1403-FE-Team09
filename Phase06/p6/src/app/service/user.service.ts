@@ -13,10 +13,8 @@ export class UserService {
 
   constructor(private http: HttpClient) {
     const user = localStorage.getItem('user');
-    if (user)
-      this.obs.next(JSON.parse(user));
-    else
-      this.obs.next(undefined);
+    if (user) this.obs.next(JSON.parse(user));
+    else this.obs.next(undefined);
   }
 
   subscribeUser(): Observable<User | undefined> {
@@ -40,7 +38,7 @@ export class UserService {
           return;
         }
         this.obs.next(u);
-        localStorage.setItem("user", JSON.stringify(u))
+        localStorage.setItem('user', JSON.stringify(u));
         resolve('ok');
       });
     });
@@ -58,7 +56,7 @@ export class UserService {
           resolve('User not found');
         } else {
           this.obs.next(u);
-          localStorage.setItem("user", JSON.stringify(u))
+          localStorage.setItem('user', JSON.stringify(u));
           resolve('ok');
         }
       });

@@ -68,5 +68,19 @@
         transition: all 0.3s ease;
       }
     }
+
+    .invalid {
+      outline: 0.2rem solid hsl(0, 100%, 60%);
+      outline-offset: -0.22rem;
+    }
+
+    .text-danger {
+      color: hsl(210, 100%, 95%);
+    }
+
+    small {
+      text-align: center;
+      text-wrap: wrap;
+    }
   }
 }

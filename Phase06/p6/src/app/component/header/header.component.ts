@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Router, RouterLink, RouterLinkActive} from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { User } from '../../interface/interface';
 import { UserService } from '../../service/user.service';
 
@@ -13,7 +13,10 @@ import { UserService } from '../../service/user.service';
 export class HeaderComponent {
   user!: User | undefined;
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.userService.subscribeUser().subscribe((user) => {

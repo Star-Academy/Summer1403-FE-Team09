@@ -8,8 +8,11 @@ import { profileGuardGuard } from './guards/profile-guard.guard';
 import { authenticatorGuardGuard } from './guards/authenticator-guard.guard';
 
 export const routes: Routes = [
-  { path: 'edit/:id', component: EditFormComponent },
-  { path: '', component: HomeComponent },
+  {
+    path: '',
+    component: HomeComponent,
+    children: [{ path: 'edit/:id', component: EditFormComponent }],
+  },
   {
     path: 'signup',
     component: SignupComponent,
