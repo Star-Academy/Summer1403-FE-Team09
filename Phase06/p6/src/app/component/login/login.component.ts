@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {UserService} from "../../service/user.service";
-import {Router} from "@angular/router";
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
+import { UserService } from "../../service/user.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -25,16 +25,22 @@ export class LoginComponent {
     ])
   });
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router) { }
 
   onSubmit(): void {
     if (this.formGroup.valid) {
       this.userService.loginUser({
         email: this.formGroup.value.email,
         password: this.formGroup.value.password
+      }).then((response: string) => {
+        if (response !== 'ok') {
+          alert(response);
+        }
+        else {
+          alert("login successfully.");
+          this.router.navigate(['/']);
+        }
       });
-
-      this.router.navigate([''])
     }
   }
 }
