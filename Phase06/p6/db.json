@@ -55,6 +55,20 @@
       "lastName": "mani",
       "email": "nima@gmail.com",
       "password": "nima1234"
+    },
+    {
+      "id": "3a11",
+      "firstName": "fada",
+      "lastName": "mada",
+      "email": "fada@gmail.com",
+      "password": "fada1234"
+    },
+    {
+      "id": "cb01",
+      "firstName": "sdfsdfsdf",
+      "lastName": "sdfsdfsdf",
+      "email": "h.nazarieh@gmail.com",
+      "password": "sdfsdfsd1f6511"
     }
   ],
   "books": [
