@@ -11,7 +11,13 @@ import { USER_API_URL } from '../app.config';
 export class UserService {
   private obs = new BehaviorSubject<User | undefined>(undefined);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    const user = localStorage.getItem('user');
+    if (user)
+      this.obs.next(JSON.parse(user));
+    else
+      this.obs.next(undefined);
+  }
 
   subscribeUser(): Observable<User | undefined> {
     return this.obs.asObservable();
@@ -19,6 +25,7 @@ export class UserService {
 
   logOut(): void {
     this.obs.next(undefined);
+    localStorage.removeItem('user');
   }
 
   loginUser(user: { email: string; password: string }): Promise<string> {
@@ -33,6 +40,7 @@ export class UserService {
           return;
         }
         this.obs.next(u);
+        localStorage.setItem("user", JSON.stringify(u))
         resolve('ok');
       });
     });
@@ -50,6 +58,7 @@ export class UserService {
           resolve('User not found');
         } else {
           this.obs.next(u);
+          localStorage.setItem("user", JSON.stringify(u))
           resolve('ok');
         }
       });
