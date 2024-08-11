@@ -14,7 +14,7 @@ import Book from '../../interface/book';
 export class AsideComponent {
   constructor(public api: ApiService) { }
 
-  bookForm = new FormGroup({
+  bookForm: FormGroup  = new FormGroup({
     name: new FormControl('', Validators.required),
     image: new FormControl('', Validators.required),
     genre: new FormControl('', Validators.required),
@@ -26,7 +26,7 @@ export class AsideComponent {
     ]),
   });
 
-  onSubmit() {
+  onSubmit(): void {
     if (this.bookForm.valid) {
       const new_book: Book = {
         name: this.bookForm.value.name || 'name',

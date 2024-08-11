@@ -2,15 +2,15 @@
   display: flex;
   flex-direction: row;
 
-  height: calc(100vh - 7.5rem);
-  min-height: calc(100vh - 7.5rem);
+  block-size: calc(100vh - 7.5rem);
+  min-block-size: calc(100vh - 7.5rem);
 
   app-aside {
-    width: 20%;
+    inline-size: 20%;
   }
 
   app-main {
-    width: 80%;
+    inline-size: 80%;
 
     flex-grow: 1;
     display: flex;
@@ -22,24 +22,24 @@
     overflow-y: auto;
 
     scrollbar-width: thin;
-    scrollbar-color: #666666 #F0F0F0;
+    scrollbar-color: hsl(150, 5%, 40%) hsl(0, 100%, 98%);
 
-    background-color: rgb(111, 138, 138);
+    background-color: hsl(150, 10%, 50%);
 
     &::-webkit-scrollbar {
-      width: 8px;
+      inline-size: 0.5rem;
     }
 
     &::-webkit-scrollbar-track {
-      background: #F0F0F0;
+      background: hsl(0, 100%, 98%);
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: #666666;
-      border-radius: 10px;
+      background-color: hsl(0, 0%, 40%);
+      border-radius: 0.625rem;
     }
     &::-webkit-scrollbar-thumb:hover {
-      background: #999999;
+      background: hsl(0, 0%, 60%);
     }
   }
 }

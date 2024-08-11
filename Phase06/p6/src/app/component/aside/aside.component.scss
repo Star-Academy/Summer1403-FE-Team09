@@ -5,11 +5,11 @@
   align-items: center;
   justify-content: center;
 
-  height: 100%;
+  block-size: 100%;
 
-  background-color: #f0f0f0;
+  background-color: hsl(0, 100%, 95%);
 
-  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.625rem hsl(0, 5%, 10%);
 
   #form {
     margin-block-start: 1.25rem;
@@ -18,13 +18,13 @@
     flex-direction: column;
 
     button {
-      margin-top: 0.625rem;
+      margin-block-start: 0.625rem;
 
-      background-color: #007bff;
-      color: #fff;
+      background-color: hsl(210, 100%, 40%);
+      color: hsl(0, 100%, 100%);
 
       border: none;
-      border-radius: 4px;
+      border-radius: 0.25rem;
 
       cursor: pointer;
 
@@ -33,11 +33,11 @@
       padding: 0.15rem;
 
       &:hover {
-        background-color: #0056b3;
+        background-color: hsl(210, 100%, 40%);
       }
 
       &:disabled {
-        background-color: #ccc;
+        background-color: hsl(0, 50%, 95%);
 
         cursor: not-allowed;
       }
@@ -47,7 +47,7 @@
       padding: 0.15rem;
       margin-block-end: 0.2rem;
 
-      border: 0.0625rem solid #ccc;
+      border: 0.0625rem solid hsl(0, 50%, 95%);
       border-radius: 0.25rem;
     }
   }
