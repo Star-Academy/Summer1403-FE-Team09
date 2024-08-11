@@ -1,6 +1,6 @@
 @mixin flex($dir: "row") {
   display: flex;
-  flex-direction: $dir;
+  flex-direction: #{$dir};
   justify-content: center;
   align-items: center;
 }
@@ -27,7 +27,7 @@ section {
 
     margin-block-end: 0.7rem;
     inline-size: 100%;
-    
+
     font-weight: 300;
     text-decoration: underline;
     text-align: center;
@@ -66,12 +66,12 @@ section {
 
     button {
       padding: 1rem;
-      
+
       border: none;
       border-radius: 0.4rem;
       color: #fff;
       background-color: rgb(138, 2, 2);
-      
+
       cursor: pointer;
       transition: background-color 0.3s ease;
       font-size: 1.25rem;
