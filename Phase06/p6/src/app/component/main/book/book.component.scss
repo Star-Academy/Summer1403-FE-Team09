@@ -17,6 +17,7 @@ section {
 
   margin: 0.7rem;
   padding: 1.4rem;
+
   box-shadow: 0.4rem 0.4rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 0.4rem;
   background-color: #cec5c5;
@@ -24,9 +25,10 @@ section {
   h2 {
     @include overflow();
 
-    margin-bottom: 0.7rem;
+    margin-block-end: 0.7rem;
+    inline-size: 100%;
+    
     font-weight: 300;
-    width: 100%;
     text-decoration: underline;
     text-align: center;
     color: rgb(37, 70, 70);
@@ -38,34 +40,38 @@ section {
   }
 
   img {
-    width: 12rem;
-    height: 12rem;
+    inline-size: 12rem;
+    block-size: 12rem;
     border-radius: 50%;
   }
 
   p {
-    margin: 0.7rem;
-    width: 100%;
     @include overflow();
+
+    margin: 0.7rem;
+    inline-size: 100%;
     text-align: center;
   }
 
   div {
     @include flex();
+
     margin: 0.3rem;
     padding: 0.7rem;
-    gap: 20px;
+    gap: 1.4rem;
 
     span {
       color: rgb(138, 2, 2);
     }
 
     button {
-      background-color: rgb(138, 2, 2);
-      color: #fff;
       padding: 1rem;
+      
       border: none;
       border-radius: 0.4rem;
+      color: #fff;
+      background-color: rgb(138, 2, 2);
+      
       cursor: pointer;
       transition: background-color 0.3s ease;
       font-size: 1.25rem;
