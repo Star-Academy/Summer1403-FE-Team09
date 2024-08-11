@@ -1,9 +1,9 @@
 <header id="header">
   <nav>
     <ul>
-      <li routerLink="" routerLinkActive="active">Home</li>
-      <li routerLink="login" routerLinkActive="active">Login</li>
-      <li routerLink="register" routerLinkActive="active">Register</li>
+      <li routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</li>
+      <li routerLink="login" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login</li>
+      <li routerLink="signup" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign Up</li>
     </ul>
   </nav>
 </header>

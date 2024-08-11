@@ -1,1 +1,17 @@
-<p>signup works!</p>
+<div id="form-container">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <label for="firstName">First Name:</label>
+    <input type="text" name="firstName" id="firstName" formControlName="firstName" />
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" name="lastName" id="lastName" formControlName="lastName"/>
+
+    <label for="email">Email Address:</label>
+    <input type="email" name="email" id="email" formControlName="email"/>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" formControlName="password"/>
+
+    <button type="submit">Sign Up</button>
+  </form>
+</div>

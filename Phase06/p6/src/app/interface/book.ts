@@ -7,3 +7,11 @@ export default interface Book {
   publishData: string;
   price: number;
 }
+
+export interface User {
+  id?: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+}
