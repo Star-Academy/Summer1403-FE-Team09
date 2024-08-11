@@ -8,7 +8,6 @@ import { USER_API_URL } from '../app.config';
 })
 export class UserService {
   private user: User | undefined = undefined;
-  baseUrl: string = 'http://localhost:3000/users';
 
   constructor(private http: HttpClient) { }
 
