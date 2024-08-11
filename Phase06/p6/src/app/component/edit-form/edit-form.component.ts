@@ -35,7 +35,9 @@ export class EditFormComponent {
     public api: ApiService,
     public route: ActivatedRoute,
     private location: Location
-  ) {
+  ) {}
+
+  ngOnInit() : void {
     this.book = this.api.getBookById(this.route.snapshot.params['id']) as Book;
 
     if (!this.book) {
@@ -57,7 +59,7 @@ export class EditFormComponent {
     });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     if (this.formGroup.valid) {
       const new_book: Book = {
         id: this.book.id,

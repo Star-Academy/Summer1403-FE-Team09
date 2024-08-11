@@ -1,24 +1,24 @@
-#Edit-Crad {
+#Edit-Card {
   padding: 1.25rem;
 
   border-radius: 0.2rem;
 
-  background-color: brown;
+  background-color: hsl(10, 60%, 35%);
 
   display: flex;
   flex-direction: column;
 
   position: absolute;
-  right: calc(50% - 12.5rem);
-  top: calc(50% - 12.5rem);
+  inset-inline-end: calc(50% - 12.5rem);
+  inset-block-start: calc(50% - 12.5rem);
 
   z-index: 50;
 
   button {
-    margin-top: 0.625rem;
+    margin-block-start: 0.625rem;
 
-    background-color: #007bff;
-    color: #fff;
+    background-color: hsl(210, 100%, 47%);
+    color: hsl(0, 100%, 100%);
 
     border: none;
     border-radius: 0.25rem;
@@ -30,22 +30,22 @@
     padding: 0.15rem;
 
     &:hover {
-      background-color: #0056b3;
+      background-color: hsl(210, 100%, 35%);
     }
 
     &:disabled {
-      background-color: #ccc;
+      background-color: hsl(0, 50%, 95%);
 
       cursor: not-allowed;
     }
 
     &#close {
-      border: 3px solid #007bff;
+      border: 0.16rem solid hsl(210, 100%, 47%);
 
-      background-color: #0000;
+      background-color: hsl(0, 0%, 0%);
 
       &:hover {
-        background-color: #0056b3;
+        background-color: hsl(210, 100%, 35%);
       }
     }
   }
@@ -58,7 +58,7 @@
       padding: 0.15rem;
       margin-block-end: 0.2rem;
 
-      border: 0.0625rem solid #ccc;
+      border: 0.0625rem solid hsl(0, 50%, 95%);
       border-radius: 0.25rem;
     }
 
