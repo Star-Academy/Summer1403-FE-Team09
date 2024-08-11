@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
+import {User} from "../interface/book";
 import {HttpClient} from "@angular/common/http";
 import { USER_API_URL } from '../app.config';
-import {User} from "../interface/book";
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +12,15 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUser(id: string): User | undefined {
+  getUser(): User | undefined {
     return this.user;
   }
 
-  loginUser(user: { email: string, password: string }): string {
+  logOut(): void {
+    this.user = undefined;
+  }
+
+  loginUser(user: {email: string, password: string}): string {
     let response: string = "";
     this.http.get<User[]>(USER_API_URL).subscribe((users: User[]) => {
       const u = users.find((u: User) => user.email === u.email);
@@ -52,5 +56,7 @@ export class UserService {
         }
       );
     });
+
+    return response;
   }
 }
