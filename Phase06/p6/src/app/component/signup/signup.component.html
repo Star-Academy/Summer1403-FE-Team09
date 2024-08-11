@@ -1,16 +1,54 @@
 <div id="form-container">
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <label for="firstName">First Name:</label>
-    <input type="text" name="firstName" id="firstName" formControlName="firstName" />
+    <input
+      [class.invalid]="formGroup.get('firstName')?.invalid"
+      type="text"
+      name="firstName"
+      id="firstName"
+      formControlName="firstName"
+    />
+    <small class="text-danger" [hidden]="formGroup.get('firstName')?.valid">
+      please enter your first name.
+    </small>
 
     <label for="lastName">Last Name:</label>
-    <input type="text" name="lastName" id="lastName" formControlName="lastName"/>
+    <input
+      type="text"
+      [class.invalid]="formGroup.get('lastName')?.invalid"
+      name="lastName"
+      id="lastName"
+      formControlName="lastName"
+    />
+    <small class="text-danger" [hidden]="formGroup.get('lastName')?.valid">
+      please enter your last name.
+    </small>
 
     <label for="email">Email Address:</label>
-    <input type="email" name="email" id="email" formControlName="email"/>
+    <input
+      type="email"
+      [class.invalid]="formGroup.get('email')?.invalid"
+      name="email"
+      id="email"
+      formControlName="email"
+    />
+    <small class="text-danger" [hidden]="formGroup.get('email')?.valid">
+      please enter a valid email address.
+    </small>
 
     <label for="password">Password:</label>
-    <input type="password" name="password" id="password" formControlName="password"/>
+    <input
+      type="password"
+      [class.invalid]="formGroup.get('password')?.invalid"
+      name="password"
+      id="password"
+      formControlName="password"
+    />
+
+    <small class="text-danger" [hidden]="formGroup.get('password')?.valid">
+      password must be at least 8 characters long. and contain at least one
+      number and one letter.
+    </small>
 
     <button type="submit">Sign Up</button>
   </form>
