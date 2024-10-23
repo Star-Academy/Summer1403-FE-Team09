@@ -54,6 +54,14 @@ export class EditFormComponent {
         Validators.required,
         Validators.pattern('^[0-9]+(.[0-9]{1,2})?$'),
       ]),
+
+//       title: new FormControl(this.book.book_title, Validators.required),
+//       image: new FormControl(this.book.image_url_l, Validators.required),
+//       publisher: new FormControl(this.book.publisher, Validators.required),
+//       isbn: new FormControl(this.book.isbn, Validators.required),
+//       year_of_publication: new FormControl(this.book.year_of_publication, Validators.required),
+//       book_author: new FormControl(this.book.book_author, Validators.required),
+
     });
   }
 
@@ -61,12 +69,14 @@ export class EditFormComponent {
     if (this.formGroup.valid) {
       const new_book: Book = {
         id: this.book.id,
-        name: this.formGroup.value.name || this.book.name,
-        image: this.formGroup.value.image || this.book.image,
-        genre: this.formGroup.value.genre?.split(',') || this.book.genre,
-        author: this.formGroup.value.author || this.book.author,
-        publishData: this.formGroup.value.publishData || this.book.publishData,
-        price: this.formGroup.value.price ?? this.book.price,
+        book_title: this.formGroup.value.book_title || this.book.book_title,
+        image_url_l: this.formGroup.value.image_url_l || this.book.image_url_l,
+        publisher: this.formGroup.value.publisher || this.book.publisher,
+        book_author: this.formGroup.value.book_author || this.book.book_author,
+        year_of_publication: this.formGroup.value.year || this.book.year_of_publication,
+        isbn: this.formGroup.value.isbn ?? this.book.isbn,
+        image_url_s: this.book.image_url_s,
+        image_url_m: this.book.image_url_m
       };
 
       this.api.editBook(new_book);
