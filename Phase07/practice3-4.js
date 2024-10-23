@@ -1,21 +1,18 @@
-import {Injectable, OnInit} from '@angular/core';
+import { Injectable } from '@angular/core';
 import Book from '../interface/book';
-import {BehaviorSubject} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
-import {API_URL} from '../app.config';
+import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { API_URL } from '../app.config';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class ApiService implements OnInit {
-  private obs = new BehaviorSubject<Book[]>([]);
-  private books!: Book[];
+export class ApiService {
+  protected obs = new Subject<Book[]>();
+  protected books!: Book[];
 
-  constructor(public http: HttpClient) {}
-
-  ngOnInit() {
+  constructor(public http: HttpClient) {
     this.books = [];
-    this.getBooks(); // fisrt api call ti inilial books
   }
 
   subscribeBooks() {
@@ -32,6 +29,10 @@ export class ApiService implements OnInit {
     });
   }
 
+  getBookById(id: string) {
+    return this.books.find((b) => b.id === id);
+  }
+
   addBook(book: Book) {
     this.http.post(API_URL, book).subscribe(() => {
       this.books.push(book);
@@ -41,6 +42,7 @@ export class ApiService implements OnInit {
 
   editBook(book: Book) {
     this.http.put(`${API_URL}/${book.id}`, book).subscribe(() => {
+
       this.books = this.books.map((b) => {
         if (b.id === book.id) {
           return book;
@@ -54,15 +56,7 @@ export class ApiService implements OnInit {
 
   deleteBook(book: Book) {
     this.http.delete(`${API_URL}/${book.id}`).subscribe(() => {
-      const index = this.books.findIndex((b) => b.id === book.id);
-      if (index !== -1) {
-        this.books.splice(index, 1);
-        this.obs.next(this.books);
-      }
+      this.getBooks();
     });
-  }
-
-  getBookById(id: string) {
-    return this.books.find((b) => b.id === id);
   }
 }

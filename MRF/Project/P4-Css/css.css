@@ -1,0 +1,77 @@
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: no-wrap;
+}
+
+aside {
+  width: 20%;
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+#main {
+  width: 80%;
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+header {
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+footer {
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+#container .card {
+  width: 22%;
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: no-wrap;
+}
+#container .card h3 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+#container .card img {
+  width: 80%;
+  margin-top: 10px;
+}
+#container .card p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}/*# sourceMappingURL=css.css.map */

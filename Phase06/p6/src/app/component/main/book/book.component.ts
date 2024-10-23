@@ -2,11 +2,13 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {CurrencyPipe, DatePipe} from '@angular/common';
 import {RouterLink} from '@angular/router';
 import Book from '../../../interface/book';
+import { IsbnPipe } from './pipes/isbn.pipe';
+
 
 @Component({
   selector: 'app-book',
   standalone: true,
-  imports: [CurrencyPipe, DatePipe, RouterLink],
+  imports: [IsbnPipe, DatePipe, RouterLink],
   templateUrl: './book.component.html',
   styleUrl: './book.component.scss',
 })

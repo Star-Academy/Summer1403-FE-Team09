@@ -14,27 +14,58 @@ import Book from '../../interface/book';
 export class AsideComponent {
   constructor(public api: ApiService) {}
 
-  bookForm: FormGroup = new FormGroup({
-    name: new FormControl('', Validators.required),
-    image: new FormControl('', Validators.required),
-    genre: new FormControl('', Validators.required),
-    author: new FormControl('', Validators.required),
-    publishData: new FormControl('', Validators.required),
-    price: new FormControl('', [
-      Validators.required,
-      Validators.pattern('^[0-9]+(.[0-9]{1,2})?$'),
-    ]),
+
+//   bookForm: FormGroup = new FormGroup({
+//     name: new FormControl('', Validators.required),
+//     image: new FormControl('', Validators.required),
+//     genre: new FormControl('', Validators.required),
+//     author: new FormControl('', Validators.required),
+//     publishData: new FormControl('', Validators.required),
+//     price: new FormControl('', [
+//       Validators.required,
+//       Validators.pattern('^[0-9]+(.[0-9]{1,2})?$'),
+//     ]),
+
+  // id: string;
+  // isbn: string;
+
+  // book_title: string;
+  // book_author: string;
+  // year_of_publication: number;
+  // publisher: string;
+
+  // image_url_s: string;
+  // image_url_m: string;
+  // image_url_l: string;
+
+  bookForm = new FormGroup({
+    
+    book_title: new FormControl('', Validators.required),
+    book_author: new FormControl('', Validators.required),
+   
+    year_of_publication: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{4}$')]),
+    isbn: new FormControl('', Validators.required),
+    publisher: new FormControl('', Validators.required),
+
+    image_url_s: new FormControl('', Validators.required),
+    image_url_m: new FormControl('', Validators.required),
+    image_url_l: new FormControl('', Validators.required),
   });
 
   onSubmit(): void {
     if (this.bookForm.valid) {
       const new_book: Book = {
-        name: this.bookForm.value.name || 'name',
-        image: this.bookForm.value.image || 'image',
-        genre: this.bookForm.value.genre?.split(',') || [],
-        author: this.bookForm.value.author || 'author',
-        publishData: this.bookForm.value.publishData || 'publishData',
-        price: Number(this.bookForm.value.price),
+        book_title: this.bookForm.value.book_title || 'book_title',
+        
+        year_of_publication: Number(this.bookForm.value.year_of_publication) || 1000,
+        book_author: this.bookForm.value.book_author || 'book_author',
+        isbn: this.bookForm.value.isbn || 'isbn',
+        
+        publisher: this.bookForm.value.publisher || 'publisher',
+        
+        image_url_s: this.bookForm.value.image_url_s || 'image_url_s',
+        image_url_m: this.bookForm.value.image_url_m || 'image_url_m',
+        image_url_l: this.bookForm.value.image_url_l || 'image_url_l',
       };
 
       this.api.addBook(new_book);

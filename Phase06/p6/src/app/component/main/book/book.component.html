@@ -1,19 +1,13 @@
 <section>
-    <h2>{{ book.name }}</h2>
-    <h4>{{ book.author }}</h4>
-    <img src="{{ book.image }}" alt="{{ book.name }}"/>
+    <h2>{{ book.book_title }}</h2>
+    <h4>{{ book.book_author }}</h4>
+    <img src="{{ book.image_url_l }}" alt="{{ book.book_title }}"/>
     <p>
-        @for (genre of book.genre; track genre) {
-            @if (!$last) {
-                {{ genre }},
-            } @else {
-                {{ genre }}
-            }
-        }
+        {{ book.publisher }}
     </p>
     <div>
-        <span>{{ book.price | currency }}</span>
-        <span>{{ book.publishData | date }}</span>
+        <span>{{ book.isbn | isbn }}</span>
+        <span>{{ book.year_of_publication| date }}</span>
     </div>
     <div>
         <button routerLink="/edit/{{ book.id }}">Edit</button>
