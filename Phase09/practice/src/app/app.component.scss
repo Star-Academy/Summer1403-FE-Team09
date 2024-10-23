@@ -1,0 +1,38 @@
+nav {
+  background-color: rgb(68, 58, 58);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    transition: all 0.3s ease-in-out;
+
+    .active {
+      background-color: #0056b3;
+      color: white;
+      border-radius: 0.2rem;
+      padding: 0.5rem;
+    }
+
+    li {
+      user-select: none;
+
+      &:first-child {
+        font-size: 2rem;
+      }
+
+      &:hover {
+        color: #dc9f9f;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}
