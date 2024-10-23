@@ -16,3 +16,11 @@ export default interface Book {
 //   image_url_m: string;
 //   image_url_l: string;
 }
+
+export interface User {
+  id?: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+}

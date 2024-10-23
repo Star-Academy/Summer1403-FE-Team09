@@ -1,31 +1,34 @@
 <div id="Edit-Card">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" formControlName="name" />
 
-<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-  <label for="book-title">Title:</label>
-  <input type="text" id="book-title" name="book-title" formControlName="book-title" />
+    <label for="image-url">Image URL:</label>
+    <input
+      type="text"
+      id="image-url"
+      name="image-url"
+      formControlName="image"
+    />
 
-  <label for="image_url_l">Image URL:</label>
-  <input type="text" id="image_url_l" name="image_url_l" formControlName="image_url_l" />
+    <label for="genre">Genre:</label>
+    <input type="text" id="genre" name="genre" formControlName="genre" />
 
-  <label for="publisher">Publisher:</label>
-  <input type="text" id="publisher" name="publisher" formControlName="publisher" />
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author" formControlName="author" />
 
-  <label for="isbn">isbn:</label>
-  <input type="text" id="isbn" name="isbn" formControlName="isbn" />
+    <label for="publishData">publish Data:</label>
+    <input
+      type="date"
+      id="publishData"
+      name="publishData"
+      formControlName="publishData"
+    />
 
-  <label for="year_of_publication">Year of pulication:</label>
-  <input
-    type="date"
-    id="year_of_publication"
-    name="year_of_publication"
-    formControlName="year_of_publication"
-  />
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" formControlName="price" />
 
-  <label for="book_author">Author:</label>
-  <input type="string" id="book_author" name="book_author" formControlName="book_author" />
-
-  <button type="submit" [disabled]="!formGroup.valid">Edit Book</button>
-</form>
-<button id="close" (click)="close()">Close</button>
-
+    <button type="submit" [disabled]="!formGroup.valid">Edit Book</button>
+  </form>
+  <button id="close" (click)="close()">Close</button>
 </div>

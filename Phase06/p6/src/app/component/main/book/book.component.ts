@@ -1,9 +1,7 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {CurrencyPipe, DatePipe} from '@angular/common';
-import {RouterLink} from '@angular/router';
-import Book from '../../../interface/book';
-import { IsbnPipe } from './pipes/isbn.pipe';
-
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CurrencyPipe, DatePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import Book from '../../../interface/interface';
 
 @Component({
   selector: 'app-book',
@@ -13,7 +11,7 @@ import { IsbnPipe } from './pipes/isbn.pipe';
   styleUrl: './book.component.scss',
 })
 export class BookComponent {
-  @Input({required: true}) public book!: Book;
+  @Input({ required: true }) public book!: Book;
   @Output() public DeleteBook = new EventEmitter<Book>();
 
   deleteBook() {

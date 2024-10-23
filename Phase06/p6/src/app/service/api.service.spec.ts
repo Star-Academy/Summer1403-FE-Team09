@@ -1,10 +1,10 @@
-import {TestBed} from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
-import {ApiService} from './api.service';
-import {HttpClient, HttpHandler} from '@angular/common/http';
-import Book from '../interface/book';
-import {of} from 'rxjs';
-import {API_URL} from '../app.config';
+import { ApiService } from './api.service';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+import Book from '../interface/interface';
+import { of } from 'rxjs';
+import { BOOK_API_URL } from '../app.config';
 
 describe('ApiService', () => {
   let service: ApiService;
@@ -20,7 +20,7 @@ describe('ApiService', () => {
     ]);
 
     TestBed.configureTestingModule({
-      providers: [ApiService, {provide: HttpClient, useValue: spy}],
+      providers: [ApiService, { provide: HttpClient, useValue: spy }],
     });
     service = TestBed.inject(ApiService);
     httpClientSpy = TestBed.inject(HttpClient) as jasmine.SpyObj<HttpClient>;
@@ -59,7 +59,7 @@ describe('ApiService', () => {
       expect(books).toEqual(mockBooks);
     });
 
-    expect(httpClientSpy.get).toHaveBeenCalledOnceWith(API_URL);
+    expect(httpClientSpy.get).toHaveBeenCalledOnceWith(BOOK_API_URL);
   });
 
   it('should find book by id when call the function', () => {

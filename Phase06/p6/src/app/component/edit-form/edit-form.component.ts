@@ -1,14 +1,14 @@
-import {Component, HostListener} from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import Book from '../../interface/book';
-import {ApiService} from '../../service/api.service';
-import {ActivatedRoute} from '@angular/router';
-import {Location} from '@angular/common';
+import Book from '../../interface/interface';
+import { ApiService } from '../../service/api.service';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-edit-form',
