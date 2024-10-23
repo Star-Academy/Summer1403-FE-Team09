@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import Book from '../interface/book';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { API_URL } from '../app.config';
 
@@ -8,8 +8,8 @@ import { API_URL } from '../app.config';
   providedIn: 'root'
 })
 export class ApiService {
-  protected obs = new Subject<Book[]>();
-  protected books!: Book[];
+  private obs = new BehaviorSubject<Book[]>([]);
+  private books!: Book[];
 
   constructor(public http: HttpClient) {
     this.books = [];
@@ -56,7 +56,11 @@ export class ApiService {
 
   deleteBook(book: Book) {
     this.http.delete(`${API_URL}/${book.id}`).subscribe(() => {
-      this.getBooks();
+      const index = this.books.findIndex(b => b.id === book.id);
+      if (index !== -1) {
+        this.books.splice(index, 1);
+        this.obs.next(this.books);
+      }
     });
   }
 }

@@ -1,24 +1,33 @@
 #Edit-Crad {
-  padding: 20px;
-  border-radius: 5px;
+  padding: 1.25rem;
+
+  border-radius: 0.2rem;
+
   background-color: brown;
+
   display: flex;
   flex-direction: column;
 
   position: absolute;
-  right: calc(50% - 200px);
-  top: calc(50% - 200px);
+  right: calc(50% - 12.5rem);
+  top: calc(50% - 12.5rem);
+
   z-index: 50;
 
   button {
-    margin-top: 10px;
+    margin-top: 0.625rem;
+
     background-color: #007bff;
     color: #fff;
+
     border: none;
-    border-radius: 4px;
+    border-radius: 0.25rem;
+
     cursor: pointer;
+
     transition: background-color 0.3s ease;
-    padding: 3px;
+
+    padding: 0.15rem;
 
     &:hover {
       background-color: #0056b3;
@@ -26,11 +35,13 @@
 
     &:disabled {
       background-color: #ccc;
+
       cursor: not-allowed;
     }
 
     &#close {
       border: 3px solid #007bff;
+
       background-color: #0000;
 
       &:hover {
@@ -44,10 +55,11 @@
     flex-direction: column;
 
     input {
-      padding: 3px;
-      margin-bottom: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      padding: 0.15rem;
+      margin-block-end: 0.2rem;
+
+      border: 0.0625rem solid #ccc;
+      border-radius: 0.25rem;
     }
 
     p {

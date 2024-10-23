@@ -12,7 +12,7 @@ import { IsbnPipe } from './pipes/isbn.pipe';
   styleUrl: './book.component.scss'
 })
 export class BookComponent {
-  @Input() public book!: Book;
+  @Input({ required: true }) public book!: Book;
   @Output() public DeleteBook = new EventEmitter<Book>;
 
   deleteBook() {

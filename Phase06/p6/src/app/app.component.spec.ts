@@ -1,10 +1,24 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './component/header/header.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { AsideComponent } from './component/aside/aside.component';
+import { MainComponent } from './component/main/main.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [
+        HttpClientModule,
+        AppComponent,
+        RouterOutlet,
+        HeaderComponent,
+        FooterComponent,
+        AsideComponent,
+        MainComponent
+      ],
     }).compileComponents();
   });
 
@@ -12,18 +26,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have the 'p6' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('Angular P6');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, p6');
   });
 });

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../service/api.service';
 import Book from '../../interface/book';
 import { BookComponent } from './book/book.component';
@@ -10,16 +10,18 @@ import { BookComponent } from './book/book.component';
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
   protected books!: Book[];
 
-  constructor(protected api: ApiService) {
+  constructor(protected api: ApiService) {}
+
+  ngOnInit() {
     this.api.subscribeBooks().subscribe((books) => {
       this.books = books;
     })
     this.api.getBooks();
   }
-  
+
   DeleteBook(book: Book) {
     this.api.deleteBook(book);
   }

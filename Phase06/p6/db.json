@@ -1,65 +1,16 @@
 {
   "books": [
     {
-      "id": "6fbc",
-      "name": "The Catcher in the Ryeeeeee",
+      "id": "4871",
+      "name": "test",
       "image": "https://picsum.photos/200/300",
       "genre": [
         "Fiction",
-        "   Coming-of-age",
-        "  qwwww"
-      ],
-      "author": "J.D. Salinger",
-      "publishData": "1951-07-16",
-      "price": 849.89
-    },
-    {
-      "id": "39c3",
-      "name": "Pride and Prejudice",
-      "image": "https://picsum.photos/200/300",
-      "genre": [
-        "Romance",
-        " Classic"
-      ],
-      "author": "Jane Austen",
-      "publishData": "1813-01-28",
-      "price": 599
-    },
-    {
-      "name": "The Hobbit",
-      "image": "https://picsum.photos/200/300",
-      "genre": [
-        "Fantasy",
-        "Adventure"
-      ],
-      "author": "J.R.R. Tolkien",
-      "publishData": "1937-09-21",
-      "price": 949,
-      "id": "6637"
-    },
-    {
-      "name": "The Da Vinci Code",
-      "image": "https://picsum.photos/200/300",
-      "genre": [
-        "Thriller",
-        "Mystery"
-      ],
-      "author": "Dan Brown",
-      "publishData": "2003-03-18",
-      "price": 1299,
-      "id": "3289"
-    },
-    {
-      "name": "The Alchemist",
-      "image": "https://picsum.photos/200/300",
-      "genre": [
-        "Fiction",
-        "Philosophy"
+        " Philosophy"
       ],
       "author": "Paulo Coelho",
       "publishData": "1988-01-01",
-      "price": 1099,
-      "id": "4871"
+      "price": 1099
     },
     {
       "name": "Brave New World",
@@ -299,17 +250,6 @@
       "author": "qweqeqwe",
       "publishData": "2024-08-01",
       "price": 32131
-    },
-    {
-      "id": "d626",
-      "name": "Mobile",
-      "image": "awdawd",
-      "genre": [
-        "awdawd"
-      ],
-      "author": "awdawda",
-      "publishData": "2024-08-15",
-      "price": 123213
     }
   ]
 }

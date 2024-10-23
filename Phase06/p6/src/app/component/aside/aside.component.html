@@ -1,6 +1,6 @@
-<aside>
-  <p>Add New Book ✨</p>
-  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+<aside id="aside">
+  <p class="p">Add New Book ✨</p>
+  <form id="form" [formGroup]="bookForm" (ngSubmit)="onSubmit()">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" formControlName="book_title" />
 

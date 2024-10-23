@@ -1,8 +1,9 @@
 #cont {
   display: flex;
   flex-direction: row;
-  height: calc(100vh - 120px);
-  min-height: calc(100vh - 120px);
+
+  height: calc(100vh - 7.5rem);
+  min-height: calc(100vh - 7.5rem);
 
   app-aside {
     width: 20%;
@@ -10,16 +11,19 @@
 
   app-main {
     width: 80%;
+
     flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     flex-shrink: 0;
+
     overflow-y: auto;
-    z-index: 20;
+
     scrollbar-width: thin;
     scrollbar-color: #666666 #F0F0F0;
+
     background-color: rgb(111, 138, 138);
 
     &::-webkit-scrollbar {
