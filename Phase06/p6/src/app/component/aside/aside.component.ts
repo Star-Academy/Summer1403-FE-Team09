@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { ReactiveFormsModule, Validators } from '@angular/forms';
-import { ApiService } from '../../service/api.service';
+import {Component} from '@angular/core';
+import {FormGroup, FormControl} from '@angular/forms';
+import {ReactiveFormsModule, Validators} from '@angular/forms';
+import {ApiService} from '../../service/api.service';
 import Book from '../../interface/book';
 
 @Component({
@@ -12,7 +12,19 @@ import Book from '../../interface/book';
   styleUrl: './aside.component.scss',
 })
 export class AsideComponent {
-  constructor(public api: ApiService) { }
+  constructor(public api: ApiService) {}
+
+
+//   bookForm: FormGroup = new FormGroup({
+//     name: new FormControl('', Validators.required),
+//     image: new FormControl('', Validators.required),
+//     genre: new FormControl('', Validators.required),
+//     author: new FormControl('', Validators.required),
+//     publishData: new FormControl('', Validators.required),
+//     price: new FormControl('', [
+//       Validators.required,
+//       Validators.pattern('^[0-9]+(.[0-9]{1,2})?$'),
+//     ]),
 
   // id: string;
   // isbn: string;
@@ -38,10 +50,9 @@ export class AsideComponent {
     image_url_s: new FormControl('', Validators.required),
     image_url_m: new FormControl('', Validators.required),
     image_url_l: new FormControl('', Validators.required),
- 
   });
 
-  onSubmit() {
+  onSubmit(): void {
     if (this.bookForm.valid) {
       const new_book: Book = {
         book_title: this.bookForm.value.book_title || 'book_title',
@@ -58,13 +69,11 @@ export class AsideComponent {
       };
 
       this.api.addBook(new_book);
-      console.log("Form Submitted!");
-      alert("Form Submitted!");
+      console.log('Form Submitted!');
+      alert('Form Submitted!');
       this.bookForm.reset();
-
-    }
-    else {
-      alert("Please fill all the fields!");
+    } else {
+      alert('Please fill all the fields!');
     }
   }
 }

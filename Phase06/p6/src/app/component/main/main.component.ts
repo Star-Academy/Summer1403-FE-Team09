@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../service/api.service';
+import {Component, OnInit} from '@angular/core';
+import {ApiService} from '../../service/api.service';
+import {BookComponent} from './book/book.component';
 import Book from '../../interface/book';
-import { BookComponent } from './book/book.component';
 
 @Component({
   selector: 'app-main',
@@ -18,7 +18,7 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.api.subscribeBooks().subscribe((books) => {
       this.books = books;
-    })
+    });
     this.api.getBooks();
   }
 

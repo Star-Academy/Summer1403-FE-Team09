@@ -1,10 +1,10 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { ApiService } from './api.service';
-import { HttpClient, HttpHandler } from '@angular/common/http';
+import {ApiService} from './api.service';
+import {HttpClient, HttpHandler} from '@angular/common/http';
 import Book from '../interface/book';
-import { of } from 'rxjs';
-import { API_URL } from '../app.config';
+import {of} from 'rxjs';
+import {API_URL} from '../app.config';
 
 describe('ApiService', () => {
   let service: ApiService;
@@ -12,17 +12,38 @@ describe('ApiService', () => {
   let httpClientSpy: jasmine.SpyObj<HttpClient>;
 
   beforeEach(() => {
-    const spy = jasmine.createSpyObj('HttpClient', ['get', 'post', 'delete', 'put']);
+    const spy = jasmine.createSpyObj('HttpClient', [
+      'get',
+      'post',
+      'delete',
+      'put',
+    ]);
 
     TestBed.configureTestingModule({
-      providers: [ApiService, { provide: HttpClient, useValue: spy }],
+      providers: [ApiService, {provide: HttpClient, useValue: spy}],
     });
     service = TestBed.inject(ApiService);
     httpClientSpy = TestBed.inject(HttpClient) as jasmine.SpyObj<HttpClient>;
 
     mockBooks = [
-      { id: '1', name: 'Book 1', author: 'Author 1', genre: ["a"], image: "", price: 100, publishData: "2002-01-01" },
-      { id: '2', name: 'Book 2', author: 'Author 2', genre: ["a"], image: "", price: 100, publishData: "2002-01-01" },
+      {
+        id: '1',
+        name: 'Book 1',
+        author: 'Author 1',
+        genre: ['a'],
+        image: '',
+        price: 100,
+        publishData: '2002-01-01',
+      },
+      {
+        id: '2',
+        name: 'Book 2',
+        author: 'Author 2',
+        genre: ['a'],
+        image: '',
+        price: 100,
+        publishData: '2002-01-01',
+      },
     ];
 
     httpClientSpy.get.and.returnValue(of(mockBooks));
@@ -34,23 +55,28 @@ describe('ApiService', () => {
   });
 
   it('should get books from the spy API', () => {
-
     service.subscribeBooks().subscribe((books) => {
       expect(books).toEqual(mockBooks);
     });
-
 
     expect(httpClientSpy.get).toHaveBeenCalledOnceWith(API_URL);
   });
 
   it('should find book by id when call the function', () => {
-
     const book = service.getBookById('1');
     expect(book).toEqual(mockBooks[0]);
   });
 
   it('should add book when call the function', () => {
-    const mockBook: Book = { id: '3', name: 'Book 3', author: 'Author 3', genre: ["a"], image: "", price: 100, publishData: "2002-01-01" };
+    const mockBook: Book = {
+      id: '3',
+      name: 'Book 3',
+      author: 'Author 3',
+      genre: ['a'],
+      image: '',
+      price: 100,
+      publishData: '2002-01-01',
+    };
 
     httpClientSpy.post.and.returnValue(of(mockBook));
 
@@ -72,7 +98,15 @@ describe('ApiService', () => {
   });
 
   it('should edit book when call the function', () => {
-    const mockBook: Book = { id: '1', name: 'Book 1', author: 'Author 1', genre: ["a"], image: "", price: 100, publishData: "2002-01-01" };
+    const mockBook: Book = {
+      id: '1',
+      name: 'Book 1',
+      author: 'Author 1',
+      genre: ['a'],
+      image: '',
+      price: 100,
+      publishData: '2002-01-01',
+    };
 
     httpClientSpy.put.and.returnValue(of(mockBook));
 
@@ -83,4 +117,3 @@ describe('ApiService', () => {
     });
   });
 });
-

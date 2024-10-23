@@ -1,7 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FooterComponent } from './footer.component';
-import { By } from '@angular/platform-browser';
+import {FooterComponent} from './footer.component';
+import {By} from '@angular/platform-browser';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -10,9 +10,8 @@ describe('FooterComponent', () => {
   let pTag: HTMLElement;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FooterComponent]
-    })
-      .compileComponents();
+      imports: [FooterComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
@@ -22,17 +21,17 @@ describe('FooterComponent', () => {
 
   it('component should be created when initial', () => {
     fixture.detectChanges();
-    expect(component).withContext("component create").toBeTruthy();
+    expect(component).withContext('component create').toBeTruthy();
   });
 
   it('footer tag should be created when initial', () => {
     fixture.detectChanges();
-    expect(footerTag).withContext("footer tag create").toBeTruthy();
+    expect(footerTag).withContext('footer tag create').toBeTruthy();
   });
 
   it('p tag should be created when initial', () => {
     fixture.detectChanges();
-    expect(pTag).withContext("p tag create").toBeTruthy();
+    expect(pTag).withContext('p tag create').toBeTruthy();
   });
 
   it('p tag have height 60px should be created when initial', () => {
